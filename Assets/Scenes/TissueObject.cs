@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TissueObject : MonoBehaviour
 {
-    [SerializeField]  GameObject prefab; 
+    public  GameObject prefab; 
     private int magnitude;
     private int MaxQuantity;
     private int CurrentQuantity;
@@ -15,7 +15,7 @@ public class TissueObject : MonoBehaviour
     // Start is called before the first frame update
    public void MoveTissueObject(Vector3 pos)
     {
-       transform.position = pos;
+       prefab.transform.position = pos;
     }
  
     public bool IsPlacementValid(Vector3 pos)
@@ -24,6 +24,9 @@ public class TissueObject : MonoBehaviour
         return false;
     } 
     private void Start () {
-     GameObject instance = Instantiate(prefab, new Vector3(0, 0, 0), Quaternion.identity);
+     prefab =  Instantiate(prefab, new Vector3(0, 0, 0), Quaternion.identity);
+    }
+    private void OnMouseDown() {
+     prefab =  Instantiate(prefab, new Vector3(0, 0, 0), Quaternion.identity);
     }
 }

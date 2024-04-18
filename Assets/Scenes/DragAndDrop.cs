@@ -12,7 +12,7 @@ public class DragAndDrop : MonoBehaviour
     private void Start()
     {
         // initalize it using get componenet from gameObject
-        tissue = gameObject.GetComponent<TissueObject>();
+        tissue = GetComponent<TissueObject>();
     }
     private Vector3 GetMousePosition()
     {
@@ -22,19 +22,17 @@ public class DragAndDrop : MonoBehaviour
     // onMouseDown, like  called once the user presses on the mouse
     private void OnMouseDown ()
     {
-        MousePositionOffset = transform.position - GetMousePosition();   
+        MousePositionOffset = tissue.prefab.transform.position - GetMousePosition();   
     }
     // OnMouseDrag is like Update keeps getting called each frame once the player mouse clicks and changes the position to change the gameObject position. 
     private void OnMouseDrag()
     {
         // set the position of the gameObject as offset + current mouse position
-        Vector3 setPos = MousePositionOffset + GetMousePosition();
-        if (tissue)
-        {
-            if (tissue.IsPlacementValid(setPos))
-            {
-                tissue.MoveTissueObject(setPos);
+        Vector3 SetPos = MousePositionOffset + GetMousePosition();   
+        if (tissue) {
+            if (tissue.IsPlacementValid(SetPos)) {
+                tissue.MoveTissueObject(SetPos);
             }
-        }
+        }    
     }
 }
