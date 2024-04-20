@@ -1,23 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CreateTissueObject : MonoBehaviour
 {
-    // Start is called before the first frame update
-    private GameObject prefab;
-    public bool isMouseUp;
-    public GameObject newCube;
+    public GameObject originalPrefab; // The original prefab to instantiate
+    private GameObject instantiatedObject; // Reference to the instantiated object
+    private bool hasBeenInstantiated = false; // Flag to track if the prefab has been instantiated
 
-    public GameObject InstantiatePrefab()
+    public GameObject InstantiateTissueObject()
     {
-        prefab = Instantiate(newCube, transform.position, Quaternion.identity);
-        return prefab;
+        // Only instantiate if the object hasn't been created yet
+        if (!hasBeenInstantiated)
+        {
+            instantiatedObject = Instantiate(originalPrefab, transform.position, Quaternion.identity);
+            instantiatedObject.name = "TissueObject"; // Optionally rename the instantiated object
+            hasBeenInstantiated = true;
+        }
+
+        return instantiatedObject;
     }
-    // Update is called once per frame
-    private void OnMouseDown()
+
+    public bool IsTissueObject(GameObject obj)
     {
-        isMouseUp = false;
-   
+        // Check if the provided GameObject is the instantiated "TissueObject"
+        return obj == instantiatedObject && instantiatedObject != null;
     }
 }

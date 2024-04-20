@@ -13,15 +13,14 @@ public class TissueObject : MonoBehaviour
     private int maxX = 100;
     private int maxY = 100;
     // Start is called before the first frame update
-   public void MoveTissueObject(GameObject pos,Vector3 Pos)
+   public void MoveTissueObject(Vector3 Pos)
     {
-       pos.transform.position = Pos ;
+       transform.position = Pos ;
     }
  
     public bool IsPlacementValid(Vector3 pos)
     {
-        if (pos.x >minX && pos.y > minY && pos.x < maxX && pos.y < maxY) return true;
-        return false;
+        return pos.x >minX && pos.y > minY && pos.x < maxX && pos.y < maxY;
     } 
     
 }
