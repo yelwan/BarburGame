@@ -1,45 +1,33 @@
 using UnityEngine;
-
+using System;
 public class DragAndDrop : MonoBehaviour
 {
-    private bool isDragging = false;
+   
     private Vector3 offset;
-    private GameObject createTissueObject;
-    private CreateTissueObject createTissue;
-    private TissueObject tissue;
-    private void Start()
-    {
-        createTissue = GetComponent<CreateTissueObject>();
-        tissue = GetComponent<TissueObject>();
+    [SerializeField] bool IsDraggable;
+    [SerializeField] InputManager input;
+    private void Awake () {
+        input.RegisterToInputEvents(HandleMouseEvent);
     }
-
-    private void OnMouseDown()
+    public  Action<Vector3> DropDelegate;
+    private void HandleMouseEvent(MouseInputs NewMouseInputs, Vector3 MousePosition)
     {
-        if (!createTissue.IsTissueObject(gameObject))
+        if (!IsDraggable) return;
+        
+        if (NewMouseInputs == MouseInputs.OnMouseDown)
         {
-            isDragging = true;
-            offset = transform.position - GetMouseWorldPosition();
-        }
-    }
+            offset = transform.position - MousePosition;
+            
 
-    private void OnMouseDrag()
-    {
-        if (isDragging)
+        }
+        if (NewMouseInputs == MouseInputs.OnMouseDrag)
         {
-            Vector3 newPosition = GetMouseWorldPosition() + offset;
-            createTissueObject = GetComponent<CreateTissueObject>().InstantiateTissueObject();
-            if (!createTissue.IsTissueObject(gameObject))
-                tissue.MoveTissueObject(newPosition);
+         transform.position = MousePosition + offset;
+
         }
-    }
-
-    private void OnMouseUp()
-    {
-        isDragging = false;
-    }
-
-    private Vector3 GetMouseWorldPosition()
-    {
-        return Input.mousePosition;
+        if (NewMouseInputs== MouseInputs.OnMouseUp)
+        {
+            DropDelegate?.Invoke(MousePosition);
+        }
     }
 }

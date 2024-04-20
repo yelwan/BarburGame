@@ -2,26 +2,33 @@ using UnityEngine;
 
 public class CreateTissueObject : MonoBehaviour
 {
-    public GameObject originalPrefab; // The original prefab to instantiate
-    private GameObject instantiatedObject; // Reference to the instantiated object
-    private bool hasBeenInstantiated = false; // Flag to track if the prefab has been instantiated
-
+    public GameObject originalPrefab;
+    private GameObject temp;
+    private GameObject instantiatedObject;
+    [SerializeField] InputManager input;
+    private void HandleMouseEvent (MouseInputs NewMouseInputs, Vector3 MousePosition)
+    {
+     if (NewMouseInputs== MouseInputs.OnMouseDown)
+        {
+            temp = InstantiateTissueObject();
+            
+            temp.GetComponent<InputManager>().SetMouseDownFirst(true);
+        }
+     if (NewMouseInputs== MouseInputs.OnMouseUp)
+        {
+            temp.GetComponent<InputManager>().SetMouseDownFirst(false);
+            temp = null;
+        }
+    }
+    private void Start()
+    {
+        input.RegisterToInputEvents(HandleMouseEvent);
+    }
     public GameObject InstantiateTissueObject()
     {
-        // Only instantiate if the object hasn't been created yet
-        if (!hasBeenInstantiated)
-        {
-            instantiatedObject = Instantiate(originalPrefab, transform.position, Quaternion.identity);
-            instantiatedObject.name = "TissueObject"; // Optionally rename the instantiated object
-            hasBeenInstantiated = true;
-        }
-
+        instantiatedObject = Instantiate(originalPrefab, transform.position, Quaternion.identity);
         return instantiatedObject;
     }
 
-    public bool IsTissueObject(GameObject obj)
-    {
-        // Check if the provided GameObject is the instantiated "TissueObject"
-        return obj == instantiatedObject && instantiatedObject != null;
-    }
+    
 }
