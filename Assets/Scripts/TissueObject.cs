@@ -18,7 +18,7 @@ public class TissueObject : MonoBehaviour
     }
     private void HandleDrop(Vector3 Position)
     {
-        if (IsPlacementValid(Position))
+        if (!IsPlacementValid(Position))
         {
             Destroy(gameObject);
         }
