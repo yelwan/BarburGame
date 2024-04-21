@@ -8,7 +8,6 @@ public class DragAndDrop : MonoBehaviour
     [SerializeField] bool IsDraggable;
     private bool hasBeenDropped = false;
     [SerializeField] InputManager input;
-    private bool canDrag = true;
     private void Awake () {
         input.RegisterToInputEvents(HandleMouseEvent);
     }
@@ -16,7 +15,7 @@ public class DragAndDrop : MonoBehaviour
     private void HandleMouseEvent(MouseInputs NewMouseInputs, Vector3 MousePosition)
     {
 
-        if (!IsDraggable || hasBeenDropped || !canDrag ) return;
+        if (!IsDraggable || hasBeenDropped) return;
         
         if (NewMouseInputs == MouseInputs.OnMouseDown)
         {
@@ -40,32 +39,6 @@ public class DragAndDrop : MonoBehaviour
         }
 
         }
-    private void StartDragging(Vector3 mousePosition)
-    {
-        IsDraggable = true;
-    }
-
-    private void StopDragging()
-    {
-        IsDraggable = false;
-    }
-
-    public void EnableDrag(bool enable)
-    {
-        canDrag = enable;
-    }
-
-    public void StartObjectCreationCoroutine(float delaySeconds)
-    {
-        StartCoroutine(ObjectCreationCoroutine(delaySeconds));
-    }
-
-    private IEnumerator ObjectCreationCoroutine(float delaySeconds)
-    {
-        EnableDrag(false); // Disable dragging during coroutine delay
-        yield return new WaitForSeconds(delaySeconds);
-        EnableDrag(true); // Re-enable dragging after delay
-    }
 }
 
 
