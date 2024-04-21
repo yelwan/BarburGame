@@ -46,6 +46,5 @@ public class InputManager : MonoBehaviour
         MouseDownFirst = false;
         mouseEvent?.Invoke(MouseInputs.OnMouseUp,Input.mousePosition);
     }
-   
 
 }
