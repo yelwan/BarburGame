@@ -13,6 +13,15 @@ public class CreateTissueObject : MonoBehaviour
             temp = InstantiateTissueObject();
             
             temp.GetComponent<InputManager>().SetMouseDownFirst(true);
+            GameObject instantiatedObject = InstantiateTissueObject();
+            if (instantiatedObject != null)
+            {
+                DragAndDrop dragAndDropComponent = instantiatedObject.GetComponent<DragAndDrop>();
+                if (dragAndDropComponent != null)
+                {
+                    dragAndDropComponent.StartObjectCreationCoroutine(3f);
+                }
+            }
         }
      if (NewMouseInputs== MouseInputs.OnMouseUp)
         {
