@@ -586,6 +586,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TissueboxFactory
       objectReference: {fileID: 0}
+    - target: {fileID: 7921746479797252418, guid: 93e7d0154b60bb346b541031b0ab20d8, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7921746479797252418, guid: 93e7d0154b60bb346b541031b0ab20d8, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 2068942195
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -707,6 +715,14 @@ PrefabInstance:
       propertyPath: targetTransform
       value: 
       objectReference: {fileID: 3112526100750596952, guid: 6b30b7d94ad52a24e9179993a78649e5, type: 3}
+    - target: {fileID: 4907747312553434198, guid: 91034a742eb8da040b8fe30982737790, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4907747312553434198, guid: 91034a742eb8da040b8fe30982737790, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 2068942195
+      objectReference: {fileID: 0}
     - target: {fileID: 7238239005566984268, guid: 91034a742eb8da040b8fe30982737790, type: 3}
       propertyPath: targetTransform
       value: 
