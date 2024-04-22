@@ -372,7 +372,7 @@ GameObject:
   - component: {fileID: 830794942}
   - component: {fileID: 830794941}
   m_Layer: 0
-  m_Name: game dessign assets 2-16
+  m_Name: droppingArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

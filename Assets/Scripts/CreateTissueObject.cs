@@ -3,22 +3,22 @@ using UnityEngine;
 public class CreateTissueObject : MonoBehaviour
 {
     public GameObject originalPrefab;
-    private GameObject temp;
+    private GameObject i_tissueObject;
     private GameObject instantiatedObject;
     [SerializeField] InputManager input;
     private void HandleMouseEvent (MouseInputs NewMouseInputs, Vector3 MousePosition)
     {
      if (NewMouseInputs== MouseInputs.OnMouseDown)
         {
-            temp = InstantiateTissueObject();
-            
-            temp.GetComponent<InputManager>().SetMouseDownFirst(true);
+            i_tissueObject = InstantiateTissueObject();
+
+            i_tissueObject.GetComponent<InputManager>().SetMouseDownFirst(true);
            
         }
      if (NewMouseInputs== MouseInputs.OnMouseUp)
         {
-            temp.GetComponent<InputManager>().SetMouseDownFirst(false);
-            temp = null;
+            i_tissueObject.GetComponent<InputManager>().SetMouseDownFirst(false);
+            i_tissueObject = null;
         }
     }
     private void Start()
