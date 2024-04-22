@@ -31,6 +31,8 @@ public class InputManager : MonoBehaviour
     private void Update()
     {
         if (!MouseDownFirst) return;
+
+        Debug.Log("ON MOUSE DRAG");
         mouseEvent?.Invoke(MouseInputs.OnMouseDrag, Input.mousePosition);
     }
     public void RegisterToInputEvents(MouseEvent i_mouseCallback)
@@ -41,6 +43,10 @@ public class InputManager : MonoBehaviour
     {
         if (!IsCreatable) return;
         MouseDownFirst = true;
+
+
+Debug.Log("ON MOUSE DOWN");
+
         mouseEvent?.Invoke(MouseInputs.OnMouseDown, Input.mousePosition);
     }
     private void OnMouseUp()
