@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TissueObject : MonoBehaviour
 {
-
+    
     private int magnitude;
     private int MaxQuantity;
     private int CurrentQuantity;
@@ -13,7 +13,7 @@ public class TissueObject : MonoBehaviour
     Vector3 MaxBound;
     private bool valid;
     private Collider2D objectCollider;
-    private void Awake()
+    private void Awake ()
     {
         dragAndDrop.DropDelegate += HandleDrop;
         objectCollider = GetComponent<Collider2D>();
@@ -31,7 +31,6 @@ public class TissueObject : MonoBehaviour
     {
         MinBound = other.bounds.min;
         MaxBound = other.bounds.max;
-
     }
     public bool IsPlacementValid(Vector3 pos)
     {
@@ -43,6 +42,7 @@ public class TissueObject : MonoBehaviour
     private void IsAnotherObjectInCollider()
     {
         Collider2D[] colliders = Physics2D.OverlapBoxAll(objectCollider.bounds.center, objectCollider.bounds.size, 0f);
+
         foreach (Collider2D collider in colliders)
         {
             if (collider != objectCollider)
@@ -50,9 +50,10 @@ public class TissueObject : MonoBehaviour
                 TissueObject otherTissue = collider.GetComponent<TissueObject>();
                 if (otherTissue != null)
                 {
-                    Destroy(otherTissue.gameObject);
+                    Destroy(gameObject);
                 }
             }
         }
+
     }
 }

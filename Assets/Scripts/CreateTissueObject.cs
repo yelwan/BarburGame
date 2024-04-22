@@ -14,10 +14,18 @@ public class CreateTissueObject : MonoBehaviour
             
             temp.GetComponent<InputManager>().SetMouseDownFirst(true);
            
-        }
+      }
      if (NewMouseInputs== MouseInputs.OnMouseUp)
         {
-            temp.GetComponent<InputManager>().SetMouseDownFirst(false);
+            if (temp != null)
+            {
+                InputManager tempInputManager = temp.GetComponent<InputManager>();
+                if (tempInputManager != null)
+                {
+                    tempInputManager.SetMouseDownFirst(false);
+                }
+            }
+
             temp = null;
         }
     }

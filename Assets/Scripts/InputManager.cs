@@ -3,21 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 public enum MouseInputs
 {
-     OnMouseUp,
-     OnMouseDown,
-     OnMouseDrag
+    OnMouseUp,
+    OnMouseDown,
+    OnMouseDrag
 }
 
 public class InputManager : MonoBehaviour
 {
-    private bool MouseDownFirst= false;
+    private bool MouseDownFirst = false;
+    private bool IsCreatable = true;
     public delegate void MouseEvent(MouseInputs NewMouseInputs, Vector3 MousePosition);
 
     MouseEvent mouseEvent;
-    public void SetMouseDownFirst (bool i_MouseDownFirst)
+    public void SetMouseDownFirst(bool i_MouseDownFirst)
     {
-       MouseDownFirst = i_MouseDownFirst;
-        
+        MouseDownFirst = i_MouseDownFirst;
+
         if (MouseDownFirst)
         {
             OnMouseDown();
@@ -27,7 +28,7 @@ public class InputManager : MonoBehaviour
             OnMouseUp();
         }
     }
-    private void Update ()
+    private void Update()
     {
         if (!MouseDownFirst) return;
         mouseEvent?.Invoke(MouseInputs.OnMouseDrag, Input.mousePosition);
@@ -36,15 +37,27 @@ public class InputManager : MonoBehaviour
     {
         mouseEvent += i_mouseCallback;
     }
-    private void OnMouseDown ()
+    private void OnMouseDown()
     {
+        if (!IsCreatable) return;
         MouseDownFirst = true;
         mouseEvent?.Invoke(MouseInputs.OnMouseDown, Input.mousePosition);
     }
-    private void OnMouseUp ()
+    private void OnMouseUp()
     {
         MouseDownFirst = false;
-        mouseEvent?.Invoke(MouseInputs.OnMouseUp,Input.mousePosition);
+        mouseEvent?.Invoke(MouseInputs.OnMouseUp, Input.mousePosition);
+        StartObjectCreationCoroutine(3f);
+    }
+    public void StartObjectCreationCoroutine(float delaySeconds)
+    {
+        StartCoroutine(ObjectCreationCoroutine(delaySeconds));
     }
 
+    private IEnumerator ObjectCreationCoroutine(float delaySeconds)
+    {
+        IsCreatable = false;
+        yield return new WaitForSeconds(delaySeconds);
+        IsCreatable = true;
+    }
 }
