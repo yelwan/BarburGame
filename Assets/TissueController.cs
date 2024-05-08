@@ -37,9 +37,9 @@ public class TissueController : MonoBehaviour
         
             Debug.Log("onobjecttype called"); // This will print a message to the console when onDown is called
 
-            GameObject newTissue = ObjectType.InstantiateTissueObject();
-            newTissue.transform.position = mouseWorldPosition;// Set to an initial position
-            currentTissue = newTissue.GetComponent<TissueObject>();
+        currentTissue = (ObjectType.InstantiateTissueObject()).GetComponent<TissueObject>();
+        currentTissue.transform.position = mouseWorldPosition;// Set to an initial position
+          //  currentTissue = newTissue.GetComponent<TissueObject>();
             //currentTissue = instanceTissue;
         
     }
@@ -57,7 +57,11 @@ public class TissueController : MonoBehaviour
 
     void onUp()
     {
-        if (currentTissue == null) return;
+    }
+}
+
+/*
+ if (currentTissue == null) return;
 
         // Temporarily disable the TissueObject's collider
         Collider2D tissueCollider = currentTissue.GetComponent<Collider2D>();
@@ -95,8 +99,6 @@ public class TissueController : MonoBehaviour
             // Create a new clone of the original tissue and use it as the currentTissue
         }
     }
-}
-
-
+ */
 
 

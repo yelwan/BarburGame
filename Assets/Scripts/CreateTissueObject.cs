@@ -7,7 +7,7 @@ public class CreateTissueObject : MonoBehaviour
 
     public GameObject InstantiateTissueObject()
     {
-        instantiatedObject = Instantiate(originalPrefab, transform.position, Quaternion.identity);
+        instantiatedObject = Instantiate(new GameObject("t", typeof(TissueObject)), transform.position, Quaternion.identity);
         return instantiatedObject;
     }
 
