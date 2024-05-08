@@ -9,14 +9,20 @@ public class TissueObject : MonoBehaviour
     private int MaxQuantity;
     private int CurrentQuantity;
     Vector3 MinBound;
-    [SerializeField] DragAndDrop dragAndDrop;
+
     Vector3 MaxBound;
     private bool valid;
+<<<<<<< Updated upstream
     private void Awake ()
     {
         dragAndDrop.DropDelegate += HandleDrop;
     }
     private void HandleDrop(Vector3 Position)
+=======
+    private Collider2D objectCollider;
+    
+    public void HandleDrop(Vector3 Position)
+>>>>>>> Stashed changes
     {
         if (!IsPlacementValid(Position))
         {
