@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class TissueObject : MonoBehaviour
 {
-    
+
     private int magnitude;
     private int MaxQuantity;
     private int CurrentQuantity;
     Vector3 MinBound;
-    [SerializeField] DragAndDrop dragAndDrop;
+    //[SerializeField] DragAndDrop dragAndDrop;
     Vector3 MaxBound;
     private bool valid;
     private Collider2D objectCollider;
-    private void Awake ()
+   
+    /*
+    private void Awake()
     {
-        dragAndDrop.DropDelegate += HandleDrop;
+        /// dragAndDrop.DropDelegate += HandleDrop;
         objectCollider = GetComponent<Collider2D>();
     }
     private void HandleDrop(Vector3 Position)
@@ -55,5 +57,5 @@ public class TissueObject : MonoBehaviour
             }
         }
 
-    }
+    }*/
 }
