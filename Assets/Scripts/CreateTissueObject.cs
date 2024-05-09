@@ -8,17 +8,20 @@ public class CreateTissueObject : MonoBehaviour
     [SerializeField] InputManager input;
     private void HandleMouseEvent (MouseInputs NewMouseInputs, Vector3 MousePosition)
     {
+        
      if (NewMouseInputs== MouseInputs.OnMouseDown)
         {
             i_tissueObject = InstantiateTissueObject();
-
+            if (i_tissueObject==null) return;
             i_tissueObject.GetComponent<InputManager>().SetMouseDownFirst(true);
            
       }
      if (NewMouseInputs== MouseInputs.OnMouseUp)
         {
+             if (i_tissueObject==null) return;
             i_tissueObject.GetComponent<InputManager>().SetMouseDownFirst(false);
             i_tissueObject = null;
+
         }
     }
     private void Start()

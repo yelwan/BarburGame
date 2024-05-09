@@ -5,7 +5,7 @@ public class GermsController : MonoBehaviour
 {
     public GameObject germPrefab;
     public Transform shootingPosition;
-    private int maxMagnitude = 100;
+    private int maxMagnitude = 200;
     private bool canShoot = true;
     private bool isSpawning = false;
 
@@ -39,7 +39,6 @@ public class GermsController : MonoBehaviour
         {
             germRigidbody.velocity = Random.insideUnitCircle * maxMagnitude / 10f;
 
-            germRigidbody.angularVelocity = Random.Range(-180f, 180f);
         }
     }
 }
