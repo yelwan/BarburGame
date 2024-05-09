@@ -10,6 +10,9 @@ public enum MouseInputs
 
 public class InputManager : MonoBehaviour
 {
+    [SerializeField] Camera cam;
+    Vector3 mouseWorldPosition => cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cam.nearClipPlane));
+
     private bool MouseDownFirst = false;
     private bool IsCreatable = true;
     public delegate void MouseEvent(MouseInputs NewMouseInputs, Vector3 MousePosition);
@@ -31,7 +34,7 @@ public class InputManager : MonoBehaviour
     private void Update()
     {
         if (!MouseDownFirst) return;
-        mouseEvent?.Invoke(MouseInputs.OnMouseDrag, Input.mousePosition);
+        mouseEvent?.Invoke(MouseInputs.OnMouseDrag, mouseWorldPosition);
     }
     public void RegisterToInputEvents(MouseEvent i_mouseCallback)
     {
@@ -41,12 +44,12 @@ public class InputManager : MonoBehaviour
     {
         if (!IsCreatable) return;
         MouseDownFirst = true;
-        mouseEvent?.Invoke(MouseInputs.OnMouseDown, Input.mousePosition);
+        mouseEvent?.Invoke(MouseInputs.OnMouseDown, mouseWorldPosition);
     }
     private void OnMouseUp()
     {
         MouseDownFirst = false;
-        mouseEvent?.Invoke(MouseInputs.OnMouseUp, Input.mousePosition);
+        mouseEvent?.Invoke(MouseInputs.OnMouseUp, mouseWorldPosition);
         StartObjectCreationCoroutine(3f);
     }
     public void StartObjectCreationCoroutine(float delaySeconds)
