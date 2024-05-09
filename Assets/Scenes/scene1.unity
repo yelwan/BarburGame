@@ -564,8 +564,8 @@ GameObject:
   - component: {fileID: 1085526615}
   - component: {fileID: 1085526614}
   - component: {fileID: 1085526613}
-  - component: {fileID: 1085526612}
   - component: {fileID: 1085526611}
+  - component: {fileID: 1085526616}
   m_Layer: 0
   m_Name: Goal
   m_TagString: Untagged
@@ -600,18 +600,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1085526612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1085526610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1be0eb7ba5229344696ca942b5ea13e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1085526613
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -724,6 +712,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1085526616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085526610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6ee3353565dbd64e9cba073bd8e3970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
 --- !u!1 &1227072646
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,6 +829,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1be0eb7ba5229344696ca942b5ea13e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  germPrefab: {fileID: 1227072646}
+  shootingPosition: {fileID: 1085526615}
 --- !u!212 &1227072650
 SpriteRenderer:
   m_ObjectHideFlags: 0
