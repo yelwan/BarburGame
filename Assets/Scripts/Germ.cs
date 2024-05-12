@@ -1,24 +1,64 @@
 
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Germ : MonoBehaviour
 {
-    private int maxMagnitude = 200;
-
+    [SerializeField] Collider2D GermsCloseness;
+    [SerializeField] float delayBeforeTextChange = 1.0f;
+    [SerializeField] Text germcloseText;
+    public Collider2D spawningArea;
+    public float movementSpeed = 5f;
+    private Rigidbody2D rb;
+    public int magnitude = 10;
 
     void Start()
     {
-       ApplyRandomContinuousForce(); 
+        rb = GetComponent<Rigidbody2D>();
+        if (spawningArea == null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        if (!IsInsideSpawningArea(transform.position))
+        {
+            Destroy(gameObject);
+            return;
+        }
+        rb.velocity = Vector2.down * movementSpeed;
     }
 
-    private void ApplyRandomContinuousForce()
+    void Update()
     {
-        Rigidbody2D germRigidbody = GetComponent<Rigidbody2D>();
-
-        if (germRigidbody != null)
+        if (!IsInsideSpawningArea(transform.position))
         {
-            germRigidbody.velocity = Random.insideUnitCircle * maxMagnitude / 10f;
-
+            Destroy(gameObject);
         }
+    }
+
+    private bool IsInsideSpawningArea(Vector2 position)
+    {
+        if (spawningArea == null)
+            return false;
+
+        float minY = spawningArea.bounds.min.y;
+        float maxY = spawningArea.bounds.max.y;
+        float minX = spawningArea.bounds.min.x;
+        float maxX = spawningArea.bounds.max.y;
+        return (position.y >= minY && position.y <= maxY && position.x >= minX && position.x <= maxX);
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other == GermsCloseness)
+        {
+            StartCoroutine(ShowGermsCloseText());
+        }
+    }
+
+    private IEnumerator ShowGermsCloseText()
+    {
+        yield return new WaitForSeconds(delayBeforeTextChange);
+        germcloseText.text = "Germs getting too close, Go Down!";
     }
 }

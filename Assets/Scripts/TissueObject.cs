@@ -5,7 +5,7 @@ using UnityEngine;
 public class TissueObject : MonoBehaviour
 {
     
-    private int magnitude;
+    public int magnitude = 5;
     private int MaxQuantity;
     private int CurrentQuantity;
     Vector3 MinBound;

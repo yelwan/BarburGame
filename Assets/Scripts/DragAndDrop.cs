@@ -5,6 +5,7 @@ public class DragAndDrop : MonoBehaviour
 {
    
     private Vector3 offset;
+    public bool IsDragging = false;
     [SerializeField] bool IsDraggable;
     private bool hasBeenDropped = false;
     [SerializeField] InputManager input;
@@ -20,11 +21,13 @@ public class DragAndDrop : MonoBehaviour
         if (NewMouseInputs == MouseInputs.OnMouseDown)
         {
             offset = transform.position - MousePosition;
+            IsDragging = true;
 
         }
         if (NewMouseInputs == MouseInputs.OnMouseDrag)
         {
          transform.position = MousePosition + offset;
+            IsDragging = true;
 
         }
         if (NewMouseInputs== MouseInputs.OnMouseUp)
@@ -32,6 +35,7 @@ public class DragAndDrop : MonoBehaviour
 
             if (!hasBeenDropped)
             {
+                IsDragging = false;
                 DropDelegate?.Invoke(MousePosition + offset);
                 hasBeenDropped = true;
                 IsDraggable = false;

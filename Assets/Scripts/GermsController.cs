@@ -1,13 +1,14 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class GermsController : MonoBehaviour
 {
     public GameObject germPrefab;
     public Transform shootingPosition;
-    private int maxMagnitude = 200;
     private bool canShoot = true;
     private bool isSpawning = false;
+    [SerializeField] Text countdownTextUI = null;
 
     void Start()
     {
@@ -20,25 +21,38 @@ public class GermsController : MonoBehaviour
         {
             if (canShoot && !isSpawning)
             {
-                isSpawning = true;
-                yield return new WaitForSeconds(5f);
-                GameObject germ = Instantiate(germPrefab, shootingPosition.position, Quaternion.identity);
-                ApplyRandomContinuousForce(germ);
-                isSpawning = false;
+                if (countdownTextUI != null)
+                {
+                    isSpawning = true;
+                    applyCountdownText("5");
+                    yield return new WaitForSeconds(1f);
+                    applyCountdownText("4");
+                    yield return new WaitForSeconds(1f);
+                    applyCountdownText("3");
+                    yield return new WaitForSeconds(1f);
+                    applyCountdownText("2");
+                    yield return new WaitForSeconds(1f);
+                    applyCountdownText("1");
+                    yield return new WaitForSeconds(1f);
+                    applyCountdownText("Germ Attack");
+                    yield return new WaitForSeconds(1f);
+                    Collider2D spawningAreaCollider = GetComponent<Germ>().spawningArea;
+                    if (spawningAreaCollider != null)
+                    {
+                        Bounds colliderBounds = spawningAreaCollider.bounds;
+                        float randomX = Random.Range(colliderBounds.min.x, colliderBounds.max.x);
+                        Vector3 spawnPosition = new Vector3(randomX, 160.6f, 0f);
+                        Instantiate(germPrefab, spawnPosition, Quaternion.identity);
+                        isSpawning = false;
+                    }
+                }
+                yield return null;
             }
-
-            yield return null;
         }
     }
-
-    private void ApplyRandomContinuousForce(GameObject germ)
+    void applyCountdownText(string i_text)
     {
-        Rigidbody2D germRigidbody = germ.GetComponent<Rigidbody2D>();
-
-        if (germRigidbody != null)
-        {
-            germRigidbody.velocity = Random.insideUnitCircle * maxMagnitude / 10f;
-
-        }
+        if (countdownTextUI == null) return;
+        countdownTextUI.text = i_text;
     }
 }

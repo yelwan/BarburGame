@@ -1,6 +1,9 @@
+
+
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 public enum MouseInputs
 {
     OnMouseUp,
@@ -11,18 +14,33 @@ public enum MouseInputs
 public class InputManager : MonoBehaviour
 {
     [SerializeField] Camera cam;
-    Vector3 mouseWorldPosition => cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cam.nearClipPlane));
+    [SerializeField] Text timerText;
+    [SerializeField] Renderer tissueRenderer; 
+    public bool isDragging = false;
+    private bool mouseDownFirst = false;
+    private bool isCreatable = true;
+    private float timer = 0f;
 
-    private bool MouseDownFirst = false;
-    private bool IsCreatable = true;
     public delegate void MouseEvent(MouseInputs NewMouseInputs, Vector3 MousePosition);
+    public MouseEvent mouseEvent;
 
-    MouseEvent mouseEvent;
-    public void SetMouseDownFirst(bool i_MouseDownFirst)
+    private void Update()
     {
-        MouseDownFirst = i_MouseDownFirst;
+        if (!mouseDownFirst) return;
 
-        if (MouseDownFirst)
+        mouseEvent?.Invoke(MouseInputs.OnMouseDrag, GetMouseWorldPosition());
+    }
+
+    private Vector3 GetMouseWorldPosition()
+    {
+        return cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cam.nearClipPlane));
+    }
+
+    public void SetMouseDownFirst(bool isMouseDownFirst)
+    {
+        mouseDownFirst = isMouseDownFirst;
+
+        if (mouseDownFirst)
         {
             OnMouseDown();
         }
@@ -31,36 +49,63 @@ public class InputManager : MonoBehaviour
             OnMouseUp();
         }
     }
-    private void Update()
-    {
-        if (!MouseDownFirst) return;
-        mouseEvent?.Invoke(MouseInputs.OnMouseDrag, mouseWorldPosition);
-    }
-    public void RegisterToInputEvents(MouseEvent i_mouseCallback)
-    {
-        mouseEvent += i_mouseCallback;
-    }
+
     private void OnMouseDown()
     {
-        if (!IsCreatable) return;
-        MouseDownFirst = true;
-        mouseEvent?.Invoke(MouseInputs.OnMouseDown, mouseWorldPosition);
+        isDragging = true;
+        if (!isCreatable) return;
+
+        mouseDownFirst = true;
+        mouseEvent?.Invoke(MouseInputs.OnMouseDown, GetMouseWorldPosition());
     }
+
     private void OnMouseUp()
     {
-        MouseDownFirst = false;
-        mouseEvent?.Invoke(MouseInputs.OnMouseUp, mouseWorldPosition);
+        mouseDownFirst = false;
+        mouseEvent?.Invoke(MouseInputs.OnMouseUp, GetMouseWorldPosition());
         StartObjectCreationCoroutine(3f);
     }
-    public void StartObjectCreationCoroutine(float delaySeconds)
+
+    private void StartObjectCreationCoroutine(float delaySeconds)
     {
         StartCoroutine(ObjectCreationCoroutine(delaySeconds));
     }
 
     private IEnumerator ObjectCreationCoroutine(float delaySeconds)
     {
-        IsCreatable = false;
-        yield return new WaitForSeconds(delaySeconds);
-        IsCreatable = true;
+        isCreatable = false;
+        timer = delaySeconds;
+
+        while (timer >= 0)
+        {
+            UpdateTimerText();
+            UpdateTissueColor();
+            yield return new WaitForSeconds(1f);
+            timer -= 1;
+        }
+
+        isCreatable = true;
+    }
+
+    private void UpdateTimerText()
+    {
+        if (timerText != null)
+        {
+            timerText.text = "Time Left: " + Mathf.Round(timer).ToString();
+        }
+    }
+
+    private void UpdateTissueColor()
+    {
+        if (tissueRenderer != null)
+        {
+            float darkness = Mathf.Lerp(0f, 1f, 1f - (timer / 3f)); 
+            tissueRenderer.material.color = new Color(darkness, darkness, darkness);
+        }
+    }
+
+    public void RegisterToInputEvents(MouseEvent i_mouseCallback)
+    {
+        mouseEvent += i_mouseCallback;
     }
 }
