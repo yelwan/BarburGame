@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3250950864493124776, guid: 09de04affb06a0146b25fa84742202bf, type: 3}
       propertyPath: m_Name
-      value: TissueboxFactory
+      value: TissuePocketFactory
       objectReference: {fileID: 0}
     - target: {fileID: 3918879550284392374, guid: 09de04affb06a0146b25fa84742202bf, type: 3}
       propertyPath: IsDraggable
@@ -59,7 +59,7 @@ PrefabInstance:
     - target: {fileID: 7084245567396197105, guid: 09de04affb06a0146b25fa84742202bf, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 13e5eb16965bcc740982c3b19f494504, type: 3}
+      objectReference: {fileID: 21300000, guid: 47c480b8caca9ae488182f07b34f2398, type: 3}
     - target: {fileID: 7084245567396197105, guid: 09de04affb06a0146b25fa84742202bf, type: 3}
       propertyPath: m_SortingLayer
       value: 1
@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be92bae46f4f751458ad0585bba3cab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originalPrefab: {fileID: 3250950864493124776, guid: 09de04affb06a0146b25fa84742202bf, type: 3}
+  originalPrefab: {fileID: 2648349513495428027, guid: 8116f28e5f43a6746a5b64f3f97236cf, type: 3}
   input: {fileID: 2818865060033239476}
 --- !u!114 &2818865060033239476 stripped
 MonoBehaviour:

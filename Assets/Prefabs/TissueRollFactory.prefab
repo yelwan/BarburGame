@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3250950864493124776, guid: 09de04affb06a0146b25fa84742202bf, type: 3}
       propertyPath: m_Name
-      value: TissueboxFactory
+      value: TissueRollFactory
       objectReference: {fileID: 0}
     - target: {fileID: 3918879550284392374, guid: 09de04affb06a0146b25fa84742202bf, type: 3}
       propertyPath: IsDraggable
@@ -59,7 +59,7 @@ PrefabInstance:
     - target: {fileID: 7084245567396197105, guid: 09de04affb06a0146b25fa84742202bf, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 13e5eb16965bcc740982c3b19f494504, type: 3}
+      objectReference: {fileID: 21300000, guid: a5fddec97e363024899073b51c8fba74, type: 3}
     - target: {fileID: 7084245567396197105, guid: 09de04affb06a0146b25fa84742202bf, type: 3}
       propertyPath: m_SortingLayer
       value: 1

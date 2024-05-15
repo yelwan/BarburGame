@@ -84,6 +84,10 @@ PrefabInstance:
       propertyPath: targetTransform
       value: 
       objectReference: {fileID: 2344274115120695955}
+    - target: {fileID: 5738345901992668573, guid: 6b30b7d94ad52a24e9179993a78649e5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0eb67520397199a42a5cede5a9b8cb1d, type: 3}
     - target: {fileID: 8812728228877937035, guid: 6b30b7d94ad52a24e9179993a78649e5, type: 3}
       propertyPath: m_IsTrigger
       value: 0
