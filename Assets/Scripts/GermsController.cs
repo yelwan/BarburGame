@@ -5,9 +5,12 @@ using UnityEngine.UI;
 public class GermsController : MonoBehaviour
 {
     public GameObject germPrefab;
-    public Transform shootingPosition;
+    public Transform shootingPosition1;
+    public Transform shootingPosition2;
     private bool canShoot = true;
     private bool isSpawning = false;
+    float randompos;
+     Vector3 spawnPosition;
     [SerializeField] Text countdownTextUI = null;
 
     void Start()
@@ -36,12 +39,14 @@ public class GermsController : MonoBehaviour
                     yield return new WaitForSeconds(1f);
                     applyCountdownText("Germ Attack");
                     yield return new WaitForSeconds(1f);
-                    Collider2D spawningAreaCollider = GetComponent<Germ>().spawningArea;
+                   Collider2D spawningAreaCollider = GetComponent<Germ>().spawningArea;
                     if (spawningAreaCollider != null)
                     {
-                        Bounds colliderBounds = spawningAreaCollider.bounds;
-                        float randomX = Random.Range(colliderBounds.min.x, colliderBounds.max.x);
-                        Vector3 spawnPosition = new Vector3(randomX, 160.6f, 0f);
+                        //Bounds colliderBounds = spawningAreaCollider.bounds;
+                         randompos = Random.Range(0, 2);
+                        if(randompos==1) spawnPosition=shootingPosition1.position;
+                        else spawnPosition=shootingPosition2.position;
+                        //spawnPosition = new Vector3(randomX, 160.6f, 0f);
                         Instantiate(germPrefab, spawnPosition, Quaternion.identity);
                         isSpawning = false;
                     }
