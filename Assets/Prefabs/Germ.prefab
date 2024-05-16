@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 7361442423737122940}
   - component: {fileID: 4676297572715209810}
-  - component: {fileID: 7743590008688470887}
-  - component: {fileID: 465047915293052597}
   - component: {fileID: 3435978891341243097}
   - component: {fileID: 9044775917971715941}
+  - component: {fileID: 9070958833298465280}
+  - component: {fileID: 8842978377245976520}
   m_Layer: 0
-  m_Name: Asset 7
+  m_Name: Germ
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,34 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7743590008688470887
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8453559797992485234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1be0eb7ba5229344696ca942b5ea13e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  germPrefab: {fileID: 0}
-  shootingPosition: {fileID: 0}
---- !u!114 &465047915293052597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8453559797992485234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df63e36547a1b7d489a9a9e566c93888, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawningArea: {fileID: 0}
-  movementSpeed: 5
 --- !u!61 &3435978891341243097
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -188,3 +160,40 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &9070958833298465280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8453559797992485234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8b019a093dfc1b48847b63325656992, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnimSprites: []
+  germRenderer: {fileID: 0}
+  germPrefab: {fileID: 0}
+  shootingPosition1: {fileID: 0}
+  shootingPosition2: {fileID: 0}
+  countdownTextUI: {fileID: 0}
+  switchTime: 0.5
+--- !u!114 &8842978377245976520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8453559797992485234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38f9402a752b5d845afd69602b6b5176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GermsCloseness: {fileID: 0}
+  delayBeforeTextChange: 1
+  germcloseText: {fileID: 0}
+  spawningArea: {fileID: 0}
+  movementSpeed: 5
+  magnitude: 10

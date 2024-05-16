@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ColliderVsTissue : MonoBehaviour
 {
-    [SerializeField] Germ germscript;
+    [SerializeField] GermObject germscript;
 
     private void OnTriggerStay2D(Collider2D collision)
     {

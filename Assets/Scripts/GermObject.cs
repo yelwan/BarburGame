@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Germ : MonoBehaviour
+public class GermObject : MonoBehaviour
 {
     [SerializeField] Collider2D GermsCloseness;
     [SerializeField] float delayBeforeTextChange = 1.0f;

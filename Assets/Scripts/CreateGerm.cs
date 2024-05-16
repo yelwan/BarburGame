@@ -2,9 +2,9 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
-public class GermsController : MonoBehaviour
+public class CreateGerm : MonoBehaviour
 {
-    [SerializeField] Sprite[] mSprites;
+    [SerializeField] Sprite[] AnimSprites;
     [SerializeField] SpriteRenderer germRenderer; 
     private Sprite currentSprite;
     public GameObject germPrefab;
@@ -26,7 +26,7 @@ public class GermsController : MonoBehaviour
         StartCoroutine("SwitchSprite");
     }
     private IEnumerator SwitchSprite(){
-	currentSprite = mSprites[counter++ % mSprites.Length];
+	currentSprite = AnimSprites[counter++ % AnimSprites.Length];
     germRenderer.sprite = currentSprite;
 	yield return new WaitForSeconds(switchTime);
 	StartCoroutine("SwitchSprite");
@@ -52,7 +52,7 @@ public class GermsController : MonoBehaviour
                     yield return new WaitForSeconds(1f);
                     applyCountdownText("Germ Attack");
                     yield return new WaitForSeconds(1f);
-                   Collider2D spawningAreaCollider = GetComponent<Germ>().spawningArea;
+                   Collider2D spawningAreaCollider = GetComponent<GermObject>().spawningArea;
                     if (spawningAreaCollider != null)
                     {
                         //Bounds colliderBounds = spawningAreaCollider.bounds;
@@ -63,8 +63,8 @@ public class GermsController : MonoBehaviour
                         GameObject c = null ;
                         if (germPrefab != null)
                              c = Instantiate(germPrefab, spawnPosition, Quaternion.identity);
-                        if(c!=null)
-                            c.GetComponent<GermsController>().germPrefab= germPrefab;
+                        if (c != null)
+                        { c.GetComponent<CreateGerm>().germPrefab = germPrefab; }
                         isSpawning = false;
                     }
                 }
