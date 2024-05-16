@@ -12,6 +12,7 @@ public class GermsController : MonoBehaviour
     float randompos;
      Vector3 spawnPosition;
     [SerializeField] Text countdownTextUI = null;
+    private GameObject currentGerm;
 
     void Start()
     {
@@ -47,7 +48,8 @@ public class GermsController : MonoBehaviour
                         if(randompos==1) spawnPosition=shootingPosition1.position;
                         else spawnPosition=shootingPosition2.position;
                         //spawnPosition = new Vector3(randomX, 160.6f, 0f);
-                        Instantiate(germPrefab, spawnPosition, Quaternion.identity);
+                        GameObject c= Instantiate(germPrefab, spawnPosition, Quaternion.identity);
+                        c.GetComponent<GermsController>().germPrefab = germPrefab;
                         isSpawning = false;
                     }
                 }
@@ -60,4 +62,5 @@ public class GermsController : MonoBehaviour
         if (countdownTextUI == null) return;
         countdownTextUI.text = i_text;
     }
+    
 }
