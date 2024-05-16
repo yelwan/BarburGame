@@ -60,8 +60,11 @@ public class GermsController : MonoBehaviour
                         if(randompos==1) spawnPosition=shootingPosition1.position;
                         else spawnPosition=shootingPosition2.position;
                         //spawnPosition = new Vector3(randomX, 160.6f, 0f);
-                        GameObject c= Instantiate(germPrefab, spawnPosition, Quaternion.identity);
-                        c.GetComponent<GermsController>().germPrefab= germPrefab;
+                        GameObject c = null ;
+                        if (germPrefab != null)
+                             c = Instantiate(germPrefab, spawnPosition, Quaternion.identity);
+                        if(c!=null)
+                            c.GetComponent<GermsController>().germPrefab= germPrefab;
                         isSpawning = false;
                     }
                 }
