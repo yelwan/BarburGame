@@ -5,11 +5,13 @@ using UnityEngine.UI;
 public class CreateGerm : MonoBehaviour
 {
     [SerializeField] Sprite[] AnimSprites;
-    [SerializeField] SpriteRenderer germRenderer; 
+    [SerializeField] SpriteRenderer germRenderer;
+    [SerializeField] GermFactory factory;
+
     private Sprite currentSprite;
-    public GameObject germPrefab;
-    public Transform shootingPosition1;
-    public Transform shootingPosition2;
+   // public GameObject germPrefab;
+    //public Transform shootingPosition1;
+    //public Transform shootingPosition2;
     private bool canShoot = true;
     private bool isSpawning = false;
     float randompos;
@@ -56,16 +58,19 @@ public class CreateGerm : MonoBehaviour
                     if (spawningAreaCollider != null)
                     {
                         //Bounds colliderBounds = spawningAreaCollider.bounds;
-                         randompos = Random.Range(0, 2);
-                        if(randompos==1) spawnPosition=shootingPosition1.position;
-                        else spawnPosition=shootingPosition2.position;
-                        //spawnPosition = new Vector3(randomX, 160.6f, 0f);
-                        GameObject c = null ;
-                        if (germPrefab != null)
-                             c = Instantiate(germPrefab, spawnPosition, Quaternion.identity);
-                        if (c != null)
-                        { c.GetComponent<CreateGerm>().germPrefab = germPrefab; }
+                        // randompos = Random.Range(0, 2);
+                        //if(randompos==1) spawnPosition=shootingPosition1.position;
+                        //else spawnPosition=shootingPosition2.position;
+                        ////spawnPosition = new Vector3(randomX, 160.6f, 0f);
+                        //GameObject c = null ;
+                        //if (germPrefab != null)
+                        //     c = Instantiate(germPrefab, spawnPosition, Quaternion.identity);
+
+                        //if (c != null)
+                        //{ c.GetComponent<CreateGerm>().germPrefab = germPrefab; }
+                        factory.createGerm();
                         isSpawning = false;
+
                     }
                 }
                 yield return null;

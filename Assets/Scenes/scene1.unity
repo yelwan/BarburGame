@@ -638,7 +638,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -362.4, y: -110.7}
+  m_AnchoredPosition: {x: -190.2, y: -134.7}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &646288064
@@ -1442,7 +1442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e297ce7c540d1d419716b99578043ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 200
+  health: 3
 --- !u!114 &1174556122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1473,6 +1473,7 @@ GameObject:
   - component: {fileID: 1175591996}
   - component: {fileID: 1175592004}
   - component: {fileID: 1175592003}
+  - component: {fileID: 1175592005}
   m_Layer: 0
   m_Name: Germ
   m_TagString: Untagged
@@ -1639,9 +1640,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4fb34b1b1acbb6748b56540f30b4730b, type: 3}
   - {fileID: 21300000, guid: e6b5ae4fc5e720849b8fe1b3ba12d293, type: 3}
   germRenderer: {fileID: 1175592001}
-  germPrefab: {fileID: 1175591994}
-  shootingPosition1: {fileID: 1085526615}
-  shootingPosition2: {fileID: 1391881688}
+  factory: {fileID: 0}
   countdownTextUI: {fileID: 2037426457}
   switchTime: 0.2
 --- !u!114 &1175592004
@@ -1662,6 +1661,21 @@ MonoBehaviour:
   spawningArea: {fileID: 2073139003}
   movementSpeed: 5
   magnitude: 1
+--- !u!114 &1175592005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175591994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33bb9e3326fc8e94188f4c940a6be294, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  germPrefab: {fileID: 2126241900}
+  shootingPosition1: {fileID: 1085526615}
+  shootingPosition2: {fileID: 1391881688}
 --- !u!1 &1252194475 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3420961954000161392, guid: 91034a742eb8da040b8fe30982737790, type: 3}
@@ -2847,11 +2861,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7361442423737122940, guid: 57d43d5fa674eaf498ed1e41d8165f16, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.500008
+      value: -214.4
       objectReference: {fileID: 0}
     - target: {fileID: 7361442423737122940, guid: 57d43d5fa674eaf498ed1e41d8165f16, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 37.7
       objectReference: {fileID: 0}
     - target: {fileID: 7361442423737122940, guid: 57d43d5fa674eaf498ed1e41d8165f16, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2921,7 +2935,8 @@ PrefabInstance:
       propertyPath: shootingPosition2
       value: 
       objectReference: {fileID: 1391881688}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9070958833298465280, guid: 57d43d5fa674eaf498ed1e41d8165f16, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
