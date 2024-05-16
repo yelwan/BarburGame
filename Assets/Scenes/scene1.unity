@@ -446,6 +446,72 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 7921746479797252418, guid: 93e7d0154b60bb346b541031b0ab20d8, type: 3}
   m_PrefabInstance: {fileID: 1758035089}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &716267072
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -2976059606151666904, guid: 6b30b7d94ad52a24e9179993a78649e5, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 40358460}
+    - target: {fileID: 2648349513495428027, guid: 6b30b7d94ad52a24e9179993a78649e5, type: 3}
+      propertyPath: m_Name
+      value: TissuePrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 3112526100750596952, guid: 6b30b7d94ad52a24e9179993a78649e5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3112526100750596952, guid: 6b30b7d94ad52a24e9179993a78649e5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3112526100750596952, guid: 6b30b7d94ad52a24e9179993a78649e5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3112526100750596952, guid: 6b30b7d94ad52a24e9179993a78649e5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3112526100750596952, guid: 6b30b7d94ad52a24e9179993a78649e5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3112526100750596952, guid: 6b30b7d94ad52a24e9179993a78649e5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3112526100750596952, guid: 6b30b7d94ad52a24e9179993a78649e5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3112526100750596952, guid: 6b30b7d94ad52a24e9179993a78649e5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3112526100750596952, guid: 6b30b7d94ad52a24e9179993a78649e5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3112526100750596952, guid: 6b30b7d94ad52a24e9179993a78649e5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6b30b7d94ad52a24e9179993a78649e5, type: 3}
+--- !u!1 &716267073 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2648349513495428027, guid: 6b30b7d94ad52a24e9179993a78649e5, type: 3}
+  m_PrefabInstance: {fileID: 716267072}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &823760937
 GameObject:
   m_ObjectHideFlags: 0
@@ -1379,6 +1445,72 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1473004837
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 983739227967181832, guid: 09de04affb06a0146b25fa84742202bf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 983739227967181832, guid: 09de04affb06a0146b25fa84742202bf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 983739227967181832, guid: 09de04affb06a0146b25fa84742202bf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 983739227967181832, guid: 09de04affb06a0146b25fa84742202bf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 983739227967181832, guid: 09de04affb06a0146b25fa84742202bf, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 983739227967181832, guid: 09de04affb06a0146b25fa84742202bf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 983739227967181832, guid: 09de04affb06a0146b25fa84742202bf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 983739227967181832, guid: 09de04affb06a0146b25fa84742202bf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 983739227967181832, guid: 09de04affb06a0146b25fa84742202bf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 983739227967181832, guid: 09de04affb06a0146b25fa84742202bf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2927734941192526343, guid: 09de04affb06a0146b25fa84742202bf, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 40358460}
+    - target: {fileID: 3250950864493124776, guid: 09de04affb06a0146b25fa84742202bf, type: 3}
+      propertyPath: m_Name
+      value: TissueBoxPrefab
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 09de04affb06a0146b25fa84742202bf, type: 3}
+--- !u!1 &1473004838 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3250950864493124776, guid: 09de04affb06a0146b25fa84742202bf, type: 3}
+  m_PrefabInstance: {fileID: 1473004837}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1538231172
 GameObject:
   m_ObjectHideFlags: 0
@@ -1653,7 +1785,7 @@ PrefabInstance:
     - target: {fileID: 1244332713645533163, guid: 93e7d0154b60bb346b541031b0ab20d8, type: 3}
       propertyPath: originalPrefab
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1473004838}
     - target: {fileID: 2495639790617206555, guid: 93e7d0154b60bb346b541031b0ab20d8, type: 3}
       propertyPath: m_Name
       value: TissueboxFactory
@@ -1906,7 +2038,7 @@ PrefabInstance:
     - target: {fileID: -7937580732058799780, guid: 91034a742eb8da040b8fe30982737790, type: 3}
       propertyPath: originalPrefab
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 716267073}
     - target: {fileID: 2344274115120695955, guid: 91034a742eb8da040b8fe30982737790, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4
@@ -2105,3 +2237,5 @@ SceneRoots:
   - {fileID: 1810829055}
   - {fileID: 1325583947}
   - {fileID: 823760938}
+  - {fileID: 1473004837}
+  - {fileID: 716267072}
