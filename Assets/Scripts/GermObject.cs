@@ -6,13 +6,14 @@ using UnityEngine.UI;
 public class GermObject : MonoBehaviour
 {
     [SerializeField] Collider2D GermsCloseness;
+     [SerializeField] GameObject originalPrefab;
     [SerializeField] float delayBeforeTextChange = 1.0f;
     [SerializeField] Text germcloseText;
+    private bool isInstantiated = false;
     public Collider2D spawningArea;
     public float movementSpeed = 5f;
     private Rigidbody2D rb;
     public int magnitude = 10;
-
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -27,6 +28,7 @@ public class GermObject : MonoBehaviour
             return;
         }
         rb.velocity = Vector2.down * movementSpeed;
+        
     }
 
     void Update()
@@ -34,6 +36,9 @@ public class GermObject : MonoBehaviour
         if (!IsInsideSpawningArea(transform.position))
         {
             Destroy(gameObject);
+        }
+        if (isInstantiated) {
+        
         }
     }
 
