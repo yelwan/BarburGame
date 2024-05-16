@@ -10,7 +10,7 @@ public class MouthObject : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        CreateGerm germController = collision.gameObject.GetComponent<CreateGerm>();
+        GermAnimation germController = collision.gameObject.GetComponent<GermAnimation>();
 
         if (germController != null)
         {

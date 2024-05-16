@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
-public class CreateGerm : MonoBehaviour
+public class GermAnimation : MonoBehaviour
 {
     [SerializeField] Sprite[] AnimSprites;
     [SerializeField] SpriteRenderer germRenderer;
@@ -68,6 +68,7 @@ public class CreateGerm : MonoBehaviour
 
                         //if (c != null)
                         //{ c.GetComponent<CreateGerm>().germPrefab = germPrefab; }
+                        if(factory!=null)
                         factory.createGerm();
                         isSpawning = false;
 
