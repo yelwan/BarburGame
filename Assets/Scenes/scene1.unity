@@ -1308,6 +1308,7 @@ GameObject:
   - component: {fileID: 1174556115}
   - component: {fileID: 1174556121}
   - component: {fileID: 1174556120}
+  - component: {fileID: 1174556122}
   m_Layer: 0
   m_Name: Goal
   m_TagString: Untagged
@@ -1442,6 +1443,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 200
+--- !u!114 &1174556122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174556114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c099425081d48446a3bddb0797d03bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameStatusText: {fileID: 646288064}
+  gameDuration: 60
+  GameTime: {fileID: 432427294}
+  Mouth: {fileID: 1174556121}
 --- !u!1 &1175591994
 GameObject:
   m_ObjectHideFlags: 0
@@ -1622,7 +1639,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4fb34b1b1acbb6748b56540f30b4730b, type: 3}
   - {fileID: 21300000, guid: e6b5ae4fc5e720849b8fe1b3ba12d293, type: 3}
   germRenderer: {fileID: 1175592001}
-  germPrefab: {fileID: 2126241900}
+  germPrefab: {fileID: 1175591994}
   shootingPosition1: {fileID: 1085526615}
   shootingPosition2: {fileID: 1391881688}
   countdownTextUI: {fileID: 2037426457}
@@ -2812,6 +2829,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4676297572715209810, guid: 57d43d5fa674eaf498ed1e41d8165f16, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4676297572715209810, guid: 57d43d5fa674eaf498ed1e41d8165f16, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 2068942195
+      objectReference: {fileID: 0}
     - target: {fileID: 7361442423737122940, guid: 57d43d5fa674eaf498ed1e41d8165f16, type: 3}
       propertyPath: m_LocalScale.x
       value: 11.014064
@@ -2929,7 +2954,6 @@ SceneRoots:
   - {fileID: 1391881688}
   - {fileID: 1174556118}
   - {fileID: 2073139004}
-  - {fileID: 2126241899}
   - {fileID: 1175592002}
   - {fileID: 404393305}
   - {fileID: 1810829055}
@@ -2938,3 +2962,4 @@ SceneRoots:
   - {fileID: 716267072}
   - {fileID: 1114051680}
   - {fileID: 691205580}
+  - {fileID: 2126241899}
