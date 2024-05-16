@@ -1305,7 +1305,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.68, y: 2.5}
+    oldSize: {x: 7.88, y: 5.6266665}
     newSize: {x: 1.68, y: 2.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1353,10 +1353,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1be0eb7ba5229344696ca942b5ea13e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mSprites:
+  - {fileID: 21300000, guid: eaf698db37f4ec042b78beb4c2ca7b70, type: 3}
+  - {fileID: 21300000, guid: 9d2876b43c9b4e946ab968bfe3018c6c, type: 3}
+  - {fileID: 21300000, guid: 42281ef78326ace44836e08209b80e22, type: 3}
+  - {fileID: 21300000, guid: 0b8996ab4e9fd174a80d2dd14dab08ba, type: 3}
+  - {fileID: 21300000, guid: 4fb34b1b1acbb6748b56540f30b4730b, type: 3}
+  - {fileID: 21300000, guid: e6b5ae4fc5e720849b8fe1b3ba12d293, type: 3}
+  germRenderer: {fileID: 1175592001}
   germPrefab: {fileID: 1175591994}
   shootingPosition1: {fileID: 1085526615}
   shootingPosition2: {fileID: 1391881688}
   countdownTextUI: {fileID: 2037426457}
+  switchTime: 0.2
 --- !u!114 &1175591999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1416,7 +1425,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4c0ec23a60d12054380c56e20374beeb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: eaf698db37f4ec042b78beb4c2ca7b70, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

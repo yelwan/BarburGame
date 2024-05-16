@@ -4,6 +4,9 @@ using UnityEngine.UI;
 
 public class GermsController : MonoBehaviour
 {
+    [SerializeField] Sprite[] mSprites;
+    [SerializeField] SpriteRenderer germRenderer; 
+    private Sprite currentSprite;
     public GameObject germPrefab;
     public Transform shootingPosition1;
     public Transform shootingPosition2;
@@ -12,13 +15,22 @@ public class GermsController : MonoBehaviour
     float randompos;
      Vector3 spawnPosition;
     [SerializeField] Text countdownTextUI = null;
-    private GameObject currentGerm;
-
+    private int counter;
+    public float switchTime = 0.5f; 
+    void OnGUI(){
+}
     void Start()
     {
+        	counter = 0;
         StartCoroutine(ShootGermsCoroutine());
+        StartCoroutine("SwitchSprite");
     }
-
+    private IEnumerator SwitchSprite(){
+	currentSprite = mSprites[counter++ % mSprites.Length];
+    germRenderer.sprite = currentSprite;
+	yield return new WaitForSeconds(switchTime);
+	StartCoroutine("SwitchSprite");
+}
     IEnumerator ShootGermsCoroutine()
     {
         while (true)
@@ -49,7 +61,7 @@ public class GermsController : MonoBehaviour
                         else spawnPosition=shootingPosition2.position;
                         //spawnPosition = new Vector3(randomX, 160.6f, 0f);
                         GameObject c= Instantiate(germPrefab, spawnPosition, Quaternion.identity);
-                        c.GetComponent<GermsController>().germPrefab = germPrefab;
+                        c.GetComponent<GermsController>().germPrefab= germPrefab;
                         isSpawning = false;
                     }
                 }
