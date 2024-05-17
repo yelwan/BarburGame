@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 9044775917971715941}
   - component: {fileID: 9070958833298465280}
   - component: {fileID: 8842978377245976520}
+  - component: {fileID: -3771026036518457253}
   m_Layer: 0
   m_Name: Germ
   m_TagString: Untagged
@@ -172,10 +173,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8b019a093dfc1b48847b63325656992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimSprites: []
-  germRenderer: {fileID: 0}
+  AnimSprites:
+  - {fileID: 21300000, guid: 0b8996ab4e9fd174a80d2dd14dab08ba, type: 3}
+  - {fileID: 21300000, guid: 4fb34b1b1acbb6748b56540f30b4730b, type: 3}
+  - {fileID: 21300000, guid: e6b5ae4fc5e720849b8fe1b3ba12d293, type: 3}
+  germRenderer: {fileID: 4676297572715209810}
   factory: {fileID: 0}
-  countdownTextUI: {fileID: 0}
   switchTime: 0.5
 --- !u!114 &8842978377245976520
 MonoBehaviour:
@@ -194,4 +197,17 @@ MonoBehaviour:
   germcloseText: {fileID: 0}
   spawningArea: {fileID: 0}
   movementSpeed: 5
-  magnitude: 10
+  magnitude: -20
+--- !u!114 &-3771026036518457253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8453559797992485234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a01cada6b5f544e4ab8975952928c8e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  germscript: {fileID: 8842978377245976520}

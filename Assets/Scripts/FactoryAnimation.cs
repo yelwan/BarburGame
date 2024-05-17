@@ -10,28 +10,16 @@ public class FactoryAnimation : MonoBehaviour
     [SerializeField] Renderer tissueRenderer;
     [SerializeField] InputManager inputManager;
     [SerializeField] Text tissueText;
-    
+    private bool isCoroutineActive = false;
 
-
-
-    void Start()
-    {
-       
-
-    }
     private void Awake()
     {
         inputManager.RegisterToInputEvents(StartCreation);
-
     }
-    void Update()
-    {
-       
 
-    }
     void StartCreation(MouseInputs NewMouseInputs, Vector3 MousePosition)
     {
-        if(NewMouseInputs==MouseInputs.OnMouseUp)
+        if(NewMouseInputs==MouseInputs.OnMouseUp && !isCoroutineActive)
            StartObjectCreationCoroutine(3f);
     }
 
@@ -42,6 +30,7 @@ public class FactoryAnimation : MonoBehaviour
 
     private IEnumerator ObjectCreationCoroutine(float delaySeconds)
     {
+        isCoroutineActive = true;
         inputManager.SetIsCreatable(false);
         timer = delaySeconds;
 
@@ -54,6 +43,7 @@ public class FactoryAnimation : MonoBehaviour
         }
 
         inputManager.SetIsCreatable(true);
+        isCoroutineActive = false;
     }
     private void UpdateTissueColor()
     {

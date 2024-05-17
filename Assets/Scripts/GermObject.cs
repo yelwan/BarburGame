@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class GermObject : MonoBehaviour
 {
-    [SerializeField] Collider2D GermsCloseness;
-     [SerializeField] GameObject originalPrefab;
+    public Collider2D GermsCloseness;
+
     [SerializeField] float delayBeforeTextChange = 1.0f;
-    [SerializeField] Text germcloseText;
+    public Text germcloseText;
     private bool isInstantiated = false;
     public Collider2D spawningArea;
     public float movementSpeed = 5f;
@@ -16,6 +16,7 @@ public class GermObject : MonoBehaviour
     public int magnitude = 10;
     void Start()
     {
+
         rb = GetComponent<Rigidbody2D>();
         if (spawningArea == null)
         {
