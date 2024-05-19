@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class MouthObject : MonoBehaviour
 {
-    public int health = 200;
+    [SerializeField] Collider2D goalCollider = null;
+    public int health = 3;
     private void Update()
     {
         CheckGameOver();
@@ -11,12 +12,13 @@ public class MouthObject : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GermAnimation germController = collision.gameObject.GetComponent<GermAnimation>();
-
-        if (germController != null)
+        if (goalCollider.GetComponent<Collider>()==collision.GetComponent<Collider>())
         {
-            health--;
+            if (germController != null)
+            {
+                health--;
+            }
         }
-
      
     }
     public bool CheckGameOver()
