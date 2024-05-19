@@ -37,6 +37,7 @@ public class EndGameManager : MonoBehaviour
             Time.timeScale = 0;
             gameStatusText.text = "You Won";
             gameStatusText.enabled = true;
+            SceneManagement.Instance.ShowGameOver("Tissue Team");
         }
     }
 }
