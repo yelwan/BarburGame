@@ -38,6 +38,7 @@ public class FactoryAnimation : MonoBehaviour
         {
             UpdateTimerText();
             UpdateTissueColor();
+            if (timer == 0) break; 
             yield return new WaitForSeconds(1f);
             timer -= 1;
         }

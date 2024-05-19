@@ -1,50 +1,77 @@
-    using System.Collections;
-    using System.Collections.Generic;
-    using UnityEngine;
-    using UnityEngine.SceneManagement;
-    using UnityEngine.UI;
+        using System.Collections;
+        using System.Collections.Generic;
+        using UnityEngine;
+        using UnityEngine.SceneManagement;
+        using UnityEngine.UI;
 
-    public class SceneManagement : MonoBehaviour
+        public class SceneManagement : MonoBehaviour
+        {
+            static public SceneManagement Instance;
+            public Text winnerText;
+            public Button nextLevelButton;
+            public Image gameOverImage;
+            public Sprite youWonSprite;
+            public Sprite completedSprite;
+            int scenecount = 3;
+            int currentcount = 0;
+
+    private void Start()
     {
-        static public SceneManagement Instance;
-        public Text winnerText;
-        public Button nextLevelButton;
-        public Image gameOverImage;
-        public Sprite youWonSprite;
-        public Sprite completedSprite;
+        Instance = this;
+        InitUI();
+    }
 
-        private void Start()
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        
+        InitUI();
+        Time.timeScale = 1;
+    }
+
+    private void InitUI()
+    {
+        if (gameOverImage != null) gameOverImage.gameObject.SetActive(false);
+        if (nextLevelButton != null)
         {
-            gameOverImage.gameObject.SetActive(false);
             nextLevelButton.gameObject.SetActive(false);
-            Instance = this;
-        }
-
-        public void ShowGameOver(string winnerName)
-        {
-            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-
-            if (currentSceneIndex < SceneManager.GetActiveScene().buildIndex)
-            {
-            gameOverImage.gameObject.SetActive(true);
-            gameOverImage.sprite = youWonSprite;
-            }
-            else if (currentSceneIndex == SceneManager.GetActiveScene().buildIndex)
-            {
-            gameOverImage.gameObject.SetActive(true);
-            gameOverImage.sprite = completedSprite;
-            }
-            winnerText.text = "Winner: " + winnerName;
-            nextLevelButton.gameObject.SetActive(true);
+            nextLevelButton.onClick.RemoveAllListeners();
             nextLevelButton.onClick.AddListener(LoadNextLevel);
         }
-
-        private void LoadNextLevel()
-        {
-            int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
-            if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+    }
+    public void ShowGameOver(string winnerName)
             {
-                SceneManager.LoadScene(nextSceneIndex);
+
+                if (currentcount < scenecount)
+                {
+                gameOverImage.gameObject.SetActive(true);
+                gameOverImage.sprite = youWonSprite;
+                nextLevelButton.gameObject.SetActive(true);
+        }
+                else if (currentcount == scenecount)
+                {
+                gameOverImage.gameObject.SetActive(true);
+                gameOverImage.sprite = completedSprite;
+                }
+                winnerText.text = "Winner: " + winnerName;
+                
+            }
+
+            private void LoadNextLevel()
+            {
+                int nextSceneIndex = ++currentcount;
+                if (nextSceneIndex < scenecount)
+                {
+                    SceneManager.LoadScene(nextSceneIndex);
+                }
             }
         }
-    }
