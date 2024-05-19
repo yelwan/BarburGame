@@ -173,13 +173,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8b019a093dfc1b48847b63325656992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimSprites:
+  AnimSpritesG:
+  - {fileID: 21300000, guid: eaf698db37f4ec042b78beb4c2ca7b70, type: 3}
+  - {fileID: 21300000, guid: 9d2876b43c9b4e946ab968bfe3018c6c, type: 3}
+  - {fileID: 21300000, guid: 42281ef78326ace44836e08209b80e22, type: 3}
   - {fileID: 21300000, guid: 0b8996ab4e9fd174a80d2dd14dab08ba, type: 3}
   - {fileID: 21300000, guid: 4fb34b1b1acbb6748b56540f30b4730b, type: 3}
   - {fileID: 21300000, guid: e6b5ae4fc5e720849b8fe1b3ba12d293, type: 3}
+  AnimSpritesR:
+  - {fileID: 21300000, guid: 23240aa70cf059b45bbb77c3dc5d7481, type: 3}
+  - {fileID: 21300000, guid: 591e8a1b862633f409589812b922c8b0, type: 3}
+  - {fileID: 21300000, guid: 5b33791a894fea04488a1443890af39b, type: 3}
+  - {fileID: 21300000, guid: b3cdb37c635c16240bd659be44fce6d4, type: 3}
+  - {fileID: 21300000, guid: dfa0309117b9bfa479e91b99b9e180fb, type: 3}
+  - {fileID: 21300000, guid: d104a4e20177aa449ab6239c21eabbef, type: 3}
+  AnimSpritesP: []
+  AnimSpritesO: []
+  AnimSpritesB: []
   germRenderer: {fileID: 4676297572715209810}
   factory: {fileID: 0}
-  switchTime: 0.5
+  switchTime: 0.1
 --- !u!114 &8842978377245976520
 MonoBehaviour:
   m_ObjectHideFlags: 0

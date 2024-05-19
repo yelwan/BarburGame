@@ -9,6 +9,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 983739227967181832, guid: 09de04affb06a0146b25fa84742202bf, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 983739227967181832, guid: 09de04affb06a0146b25fa84742202bf, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 983739227967181832, guid: 09de04affb06a0146b25fa84742202bf, type: 3}
       propertyPath: m_LocalPosition.x
       value: -115.9
       objectReference: {fileID: 0}
@@ -52,6 +60,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TissueRollFactory
       objectReference: {fileID: 0}
+    - target: {fileID: 3770220435833329561, guid: 09de04affb06a0146b25fa84742202bf, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 5.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3770220435833329561, guid: 09de04affb06a0146b25fa84742202bf, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 9.6
+      objectReference: {fileID: 0}
     - target: {fileID: 3918879550284392374, guid: 09de04affb06a0146b25fa84742202bf, type: 3}
       propertyPath: IsDraggable
       value: 0
@@ -59,10 +75,14 @@ PrefabInstance:
     - target: {fileID: 7084245567396197105, guid: 09de04affb06a0146b25fa84742202bf, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: a5fddec97e363024899073b51c8fba74, type: 3}
+      objectReference: {fileID: 21300000, guid: 262c70f3d8311684592a81fb330135b5, type: 3}
     - target: {fileID: 7084245567396197105, guid: 09de04affb06a0146b25fa84742202bf, type: 3}
       propertyPath: m_SortingLayer
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7084245567396197105, guid: 09de04affb06a0146b25fa84742202bf, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7084245567396197105, guid: 09de04affb06a0146b25fa84742202bf, type: 3}
       propertyPath: m_SortingLayerID

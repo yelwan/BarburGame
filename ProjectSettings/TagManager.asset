@@ -45,3 +45,6 @@ TagManager:
   - name: TissueObject
     uniqueID: 2068942195
     locked: 0
+  - name: Background
+    uniqueID: 1554213115
+    locked: 0
