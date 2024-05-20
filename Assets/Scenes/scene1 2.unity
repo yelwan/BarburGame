@@ -2188,7 +2188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33bb9e3326fc8e94188f4c940a6be294, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  germPrefab: {fileID: 8453559797992485234, guid: 80be29d67c179c94682d3fa69aca3d34, type: 3}
+  germPrefab: {fileID: 8453559797992485234, guid: 57d43d5fa674eaf498ed1e41d8165f16, type: 3}
   shootingPosition1: {fileID: 883540324}
   shootingPosition2: {fileID: 1859627626}
   GermsCloseness: {fileID: 1325583946}

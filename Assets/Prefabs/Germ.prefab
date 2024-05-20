@@ -32,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -17.5, y: 0, z: 0}
-  m_LocalScale: {x: 0.16025461, y: 1.1183596, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -125,7 +125,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.6, y: 0.429}
+    oldSize: {x: 6, y: 4.29}
     newSize: {x: 1.68, y: 2.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -196,15 +196,15 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 53d3e8e1ae31cac4fa532b991be05a9e, type: 3}
   AnimSpritesO:
   - {fileID: 21300000, guid: 5bd425425f4869b458be900b0d0fed1b, type: 3}
-  - {fileID: 21300000, guid: 886bdaafa7a98e3498d1d2c19d1fa308, type: 3}
-  - {fileID: 21300000, guid: 4cf3328d0b0cf1f45bccbe0405bc5d83, type: 3}
+  - {fileID: 21300000, guid: 2a5cafc194702c044a15ad7484851d8d, type: 3}
+  - {fileID: 21300000, guid: 5bd425425f4869b458be900b0d0fed1b, type: 3}
   - {fileID: 21300000, guid: ab27c75f5c91eac478bf5427859fb9ce, type: 3}
   - {fileID: 21300000, guid: 9262cfd859ae4214dac8e622c95858f5, type: 3}
   - {fileID: 21300000, guid: 634bd7c9ca93f5048ba90455f744450e, type: 3}
   AnimSpritesB:
   - {fileID: 21300000, guid: 4c9be3e735d57a9419f931bfad746cf9, type: 3}
   - {fileID: 21300000, guid: fcd750b00e0451246a9bcb3030dbdf1b, type: 3}
-  - {fileID: 21300000, guid: a396902ef191fc94f8521c9f6815507f, type: 3}
+  - {fileID: 21300000, guid: f3c2b2b8fb292154995af2ea255118a1, type: 3}
   - {fileID: 21300000, guid: b5949db9f0bce6943b6a7e88b16f6434, type: 3}
   - {fileID: 21300000, guid: 059172ab5f7309d4ea506fcd61b1eb42, type: 3}
   - {fileID: 21300000, guid: 060e9123539c31541a8a333d29781cfd, type: 3}
