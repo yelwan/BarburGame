@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 40358460}
   - component: {fileID: 40358459}
   - component: {fileID: 40358462}
+  - component: {fileID: 40358463}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -243,6 +244,20 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &40358463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40358458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17ab8855a96dc9c4e87b0161eb2341ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 40358460}
+  coll: {fileID: 830794943}
 --- !u!1001 &42893464
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -330,6 +345,10 @@ PrefabInstance:
     - target: {fileID: 4318242025658815530, guid: f87a103cd01ef3f4a804afa8be735d36, type: 3}
       propertyPath: m_Offset.y
       value: 0.82068825
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863960678458461661, guid: f87a103cd01ef3f4a804afa8be735d36, type: 3}
+      propertyPath: magnitude
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1494,7 +1513,6 @@ GameObject:
   - component: {fileID: 830794942}
   - component: {fileID: 830794941}
   - component: {fileID: 830794943}
-  - component: {fileID: 830794944}
   m_Layer: 0
   m_Name: droppingArea
   m_TagString: Untagged
@@ -1614,20 +1632,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.221918, y: 3.9342127}
   m_EdgeRadius: 0
---- !u!114 &830794944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 830794940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17ab8855a96dc9c4e87b0161eb2341ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camera: {fileID: 40358460}
-  collider: {fileID: 830794943}
 --- !u!1 &883540322
 GameObject:
   m_ObjectHideFlags: 0
@@ -2112,7 +2116,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 51ede1af28084de4f9e61026cc268b2e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b97725faf44cf124d90506013b2c5ceb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2184,7 +2188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33bb9e3326fc8e94188f4c940a6be294, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  germPrefab: {fileID: 8453559797992485234, guid: 57d43d5fa674eaf498ed1e41d8165f16, type: 3}
+  germPrefab: {fileID: 8453559797992485234, guid: 80be29d67c179c94682d3fa69aca3d34, type: 3}
   shootingPosition1: {fileID: 883540324}
   shootingPosition2: {fileID: 1859627626}
   GermsCloseness: {fileID: 1325583946}

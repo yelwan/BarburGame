@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8842978377245976520}
   - component: {fileID: -3771026036518457253}
   m_Layer: 0
-  m_Name: Germ
+  m_Name: Germ 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -191,7 +191,7 @@ MonoBehaviour:
   AnimSpritesO: []
   AnimSpritesB: []
   germMag: 0
-  maxMagnitude: 30
+  maxMagnitude: 50
   germRenderer: {fileID: 4676297572715209810}
   factory: {fileID: 0}
   switchTime: 0.1

@@ -8,14 +8,16 @@ public class GermObject : MonoBehaviour
     public Collider2D GermsCloseness;
 
     [SerializeField] float delayBeforeTextChange = 1.0f;
+    [SerializeField] GermAnimation germAnim;
     public Text germcloseText;
     private bool isInstantiated = false;
     public Collider2D spawningArea;
     public float movementSpeed = 5f;
     private Rigidbody2D rb;
-    public int magnitude = 10;
+    public int magnitude;
     void Start()
     {
+        magnitude = germAnim.germMag;
 
         rb = GetComponent<Rigidbody2D>();
         if (spawningArea == null)
