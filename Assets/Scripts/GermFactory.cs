@@ -21,7 +21,7 @@ public class GermFactory : MonoBehaviour
     public void createGerm()
 
     {
-        randompos = Random.Range(1, maxMagnitude);
+        randompos = Random.Range(0, 4);
          spawnPosition = shootingPosition[randompos].position;
         if (germPrefab != null)
         {

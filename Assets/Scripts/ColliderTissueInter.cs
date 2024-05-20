@@ -16,32 +16,28 @@ public class ColliderVsTissue : MonoBehaviour
             {
                 int germMagnitude = germscript.germMag;
                 int tissueMagnitude = tissueCollider.magnitude;
-                while (tissueMagnitude > germMagnitude)
+                if (tissueMagnitude > germMagnitude)
                 {
+                    Destroy(germscript.gameObject);
                     tissueMagnitude -= germMagnitude;
                     if (tissueMagnitude <= 0)
                     {
-                        break;
+                        return;
                     }
                 }
-                tissueCollider.magnitude = tissueMagnitude;
-                if (tissueMagnitude <= 0)
-                {
-                    Destroy(tissueCollider.gameObject);
-                }
+                
                 while (germMagnitude > tissueMagnitude)
                 {
+                    Destroy(tissueCollider.gameObject);
                     germMagnitude -= tissueMagnitude;
                     if (germMagnitude <= 0)
                     {
                         break;
                     }
+                    germscript.germMag = germMagnitude;
+
                 }
-                germscript.germMag = germMagnitude;
-                if (germMagnitude <= 0)
-                {
-                    Destroy(germscript.gameObject);
-                }
+                
             }
         }
     }

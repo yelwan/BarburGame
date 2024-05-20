@@ -9,7 +9,7 @@ public class GermAnimation : MonoBehaviour
     [SerializeField] Sprite[] AnimSpritesP;
     [SerializeField] Sprite[] AnimSpritesO;
     [SerializeField] Sprite[] AnimSpritesB;
-    [SerializeField] Sprite[] AnimSpritesBB;
+    [SerializeField] Sprite AnimSpritesBB;
 
     Sprite[][] AllAnimSprites;
     public int germMag;
@@ -25,15 +25,20 @@ public class GermAnimation : MonoBehaviour
     void Start()
     {
         
-        AllAnimSprites = new Sprite[][] { AnimSpritesBB, AnimSpritesP, AnimSpritesO, AnimSpritesG, AnimSpritesR,   AnimSpritesB };
+        AllAnimSprites = new Sprite[][] { AnimSpritesP, AnimSpritesO, AnimSpritesG, AnimSpritesR,   AnimSpritesB };
         counter = 0;
         germRenderer = GetComponent<SpriteRenderer>();
         StartCoroutine("SwitchSprite");
     }
     private IEnumerator SwitchSprite(){
-	currentSprite = AllAnimSprites[germMag][counter++ % AllAnimSprites[germMag].Length];
-    germRenderer.sprite = currentSprite;
-	yield return new WaitForSeconds(switchTime);
+        if (germMag > 0)
+        {
+            currentSprite = AllAnimSprites[germMag-1][counter++ % AllAnimSprites[germMag].Length];
+            germRenderer.sprite = currentSprite;
+        }
+        else germRenderer.sprite = AnimSpritesBB;
+
+        yield return new WaitForSeconds(switchTime);
 	StartCoroutine("SwitchSprite");
 }
    
