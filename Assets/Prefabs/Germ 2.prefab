@@ -187,11 +187,29 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b3cdb37c635c16240bd659be44fce6d4, type: 3}
   - {fileID: 21300000, guid: dfa0309117b9bfa479e91b99b9e180fb, type: 3}
   - {fileID: 21300000, guid: d104a4e20177aa449ab6239c21eabbef, type: 3}
-  AnimSpritesP: []
-  AnimSpritesO: []
-  AnimSpritesB: []
+  AnimSpritesP:
+  - {fileID: 21300000, guid: 5ba41596195de4d4788b1b04de2e69b7, type: 3}
+  - {fileID: 21300000, guid: 886bdaafa7a98e3498d1d2c19d1fa308, type: 3}
+  - {fileID: 21300000, guid: a396902ef191fc94f8521c9f6815507f, type: 3}
+  - {fileID: 21300000, guid: b29bbd0692d791949a75defb0aeff3a6, type: 3}
+  - {fileID: 21300000, guid: 53b659c95018f4f4a9b9b5c3aa0c4596, type: 3}
+  - {fileID: 21300000, guid: 53d3e8e1ae31cac4fa532b991be05a9e, type: 3}
+  AnimSpritesO:
+  - {fileID: 21300000, guid: 5ba41596195de4d4788b1b04de2e69b7, type: 3}
+  - {fileID: 21300000, guid: 886bdaafa7a98e3498d1d2c19d1fa308, type: 3}
+  - {fileID: 21300000, guid: a396902ef191fc94f8521c9f6815507f, type: 3}
+  - {fileID: 21300000, guid: b29bbd0692d791949a75defb0aeff3a6, type: 3}
+  - {fileID: 21300000, guid: 53b659c95018f4f4a9b9b5c3aa0c4596, type: 3}
+  - {fileID: 21300000, guid: 53d3e8e1ae31cac4fa532b991be05a9e, type: 3}
+  AnimSpritesB:
+  - {fileID: 21300000, guid: 4c9be3e735d57a9419f931bfad746cf9, type: 3}
+  - {fileID: 21300000, guid: fcd750b00e0451246a9bcb3030dbdf1b, type: 3}
+  - {fileID: 21300000, guid: f3c2b2b8fb292154995af2ea255118a1, type: 3}
+  - {fileID: 21300000, guid: b5949db9f0bce6943b6a7e88b16f6434, type: 3}
+  - {fileID: 21300000, guid: 059172ab5f7309d4ea506fcd61b1eb42, type: 3}
+  - {fileID: 21300000, guid: 060e9123539c31541a8a333d29781cfd, type: 3}
   germMag: 0
-  maxMagnitude: 50
+  maxMagnitude: 5
   germRenderer: {fileID: 4676297572715209810}
   factory: {fileID: 0}
   switchTime: 0.1
@@ -226,4 +244,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a01cada6b5f544e4ab8975952928c8e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  germscript: {fileID: 8842978377245976520}
+  germscript: {fileID: 9070958833298465280}

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ColliderVsTissue : MonoBehaviour
 {
-    [SerializeField] GermObject germscript;
+    [SerializeField] GermAnimation germscript;
 
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -14,11 +14,11 @@ public class ColliderVsTissue : MonoBehaviour
         {
             if (!dragAndDrop.IsDragging)
             {
-                int germMagnitude = germscript.magnitude;
+                int germMagnitude = germscript.germMag;
                 int tissueMagnitude = tissueCollider.magnitude;
                 while (tissueMagnitude > germMagnitude)
                 {
-                    tissueMagnitude -= 10;
+                    tissueMagnitude -= germMagnitude;
                     if (tissueMagnitude <= 0)
                     {
                         break;
@@ -31,13 +31,13 @@ public class ColliderVsTissue : MonoBehaviour
                 }
                 while (germMagnitude > tissueMagnitude)
                 {
-                    germMagnitude -= 10;
+                    germMagnitude -= tissueMagnitude;
                     if (germMagnitude <= 0)
                     {
                         break;
                     }
                 }
-                germscript.magnitude = germMagnitude;
+                germscript.germMag = germMagnitude;
                 if (germMagnitude <= 0)
                 {
                     Destroy(germscript.gameObject);

@@ -348,7 +348,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5863960678458461661, guid: f87a103cd01ef3f4a804afa8be735d36, type: 3}
       propertyPath: magnitude
-      value: 100
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1838,7 +1838,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5863960678458461661, guid: 34d5cdd803a313d4aa30a80a244976e9, type: 3}
       propertyPath: magnitude
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3126,7 +3126,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5863960678458461661, guid: 93e7d0154b60bb346b541031b0ab20d8, type: 3}
       propertyPath: magnitude
-      value: 30000
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7921746479797252418, guid: 93e7d0154b60bb346b541031b0ab20d8, type: 3}
       propertyPath: m_Sprite
@@ -3620,7 +3620,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3534152078372617486, guid: 91034a742eb8da040b8fe30982737790, type: 3}
       propertyPath: magnitude
-      value: 20000
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3534152078372617486, guid: 91034a742eb8da040b8fe30982737790, type: 3}
       propertyPath: targetTransform
