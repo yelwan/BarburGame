@@ -32,7 +32,7 @@ public class GermFactory : MonoBehaviour
           germObject.germcloseText = germcloseText;
           germObject.spawningArea = GetComponent<GermCorutineManager>().spawningArea;
           germObject.GermsCloseness = GermsCloseness;
-          germObject.magnitude = germAnim.germMag = Random.Range(0, maxMagnitude); 
+          germObject.magnitude = germAnim.germMag = Random.Range(0, maxMagnitude-1); 
         }
     }
     

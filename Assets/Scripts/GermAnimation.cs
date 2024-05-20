@@ -9,6 +9,8 @@ public class GermAnimation : MonoBehaviour
     [SerializeField] Sprite[] AnimSpritesP;
     [SerializeField] Sprite[] AnimSpritesO;
     [SerializeField] Sprite[] AnimSpritesB;
+    [SerializeField] Sprite[] AnimSpritesBB;
+
     Sprite[][] AllAnimSprites;
     public int germMag;
     [SerializeField] private int maxMagnitude = 2;
@@ -23,7 +25,7 @@ public class GermAnimation : MonoBehaviour
     void Start()
     {
         
-        AllAnimSprites = new Sprite[][] { AnimSpritesG, AnimSpritesR, AnimSpritesP, AnimSpritesO, AnimSpritesB };
+        AllAnimSprites = new Sprite[][] { AnimSpritesBB, AnimSpritesP, AnimSpritesO, AnimSpritesG, AnimSpritesR,   AnimSpritesB };
         counter = 0;
         germRenderer = GetComponent<SpriteRenderer>();
         StartCoroutine("SwitchSprite");
