@@ -9,6 +9,9 @@ public class EndGameManager : MonoBehaviour
     [SerializeField] float gameDuration = 60f;
     [SerializeField] Text GameTime;
     [SerializeField] MouthObject Mouth;
+    public Image gameOverImage;
+    public Sprite youLostSprite;
+
 
     void Start()
     {
@@ -30,6 +33,7 @@ public class EndGameManager : MonoBehaviour
 
             Time.timeScale = 0;
             gameStatusText.text = "Game Over";
+            gameOverImage.sprite = youLostSprite;
             gameStatusText.enabled = true;
         }
         else if (gameDuration <= 0)
