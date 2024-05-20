@@ -7,10 +7,9 @@ public class GermFactory : MonoBehaviour
 {
    
     [SerializeField] GameObject germPrefab;
-    float randompos;
+    int randompos;
     Vector3 spawnPosition;
-    public Transform shootingPosition1;
-    public Transform shootingPosition2;
+    public Transform []shootingPosition;
     // GermObject objects components
     [SerializeField] Collider2D GermsCloseness;
     [SerializeField] Text germcloseText;
@@ -19,9 +18,8 @@ public class GermFactory : MonoBehaviour
     public void createGerm()
 
     {
-        randompos = Random.Range(0, 2);
-        if (randompos == 1) { spawnPosition = shootingPosition1.position; }
-        else spawnPosition = shootingPosition2.position;
+        randompos = Random.Range(0, 5);
+         spawnPosition = shootingPosition[randompos].position;
         if (germPrefab != null)
         {
           GameObject germClone =  Instantiate(germPrefab, spawnPosition, Quaternion.identity);
