@@ -2347,6 +2347,7 @@ MonoBehaviour:
   - {fileID: 742895309}
   GermsCloseness: {fileID: 1325583946}
   germcloseText: {fileID: 1718902015}
+  maxMagnitude: 6
 --- !u!114 &1175592006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2610,7 +2611,7 @@ GameObject:
   - component: {fileID: 1257967085}
   - component: {fileID: 1257967084}
   m_Layer: 0
-  m_Name: PT1_V2_Elharmil_Nour_900201493_DGD.jpg (2)
+  m_Name: Mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -22,7 +22,7 @@ public class GermAnimation : MonoBehaviour
 }
     void Start()
     {
-        germMag = Random.Range(0, maxMagnitude);
+        
         AllAnimSprites = new Sprite[][] { AnimSpritesG, AnimSpritesR, AnimSpritesP, AnimSpritesO, AnimSpritesB };
         counter = 0;
         germRenderer = GetComponent<SpriteRenderer>();
