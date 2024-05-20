@@ -2042,6 +2042,8 @@ MonoBehaviour:
   gameDuration: 60
   GameTime: {fileID: 432427294}
   Mouth: {fileID: 1065259889}
+  gameOverImage: {fileID: 309841589}
+  youLostSprite: {fileID: 21300000, guid: 165a67d7b944f8c44a67047b3a88c374, type: 3}
 --- !u!114 &1065259885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2129,6 +2131,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goalCollider: {fileID: 1065259886}
+  healthSprites:
+  - {fileID: 21300000, guid: d1b24fc736bf7234e8f76322a70d2d92, type: 3}
+  - {fileID: 21300000, guid: 65e7b314f45f4434d953d98c1e289515, type: 3}
+  - {fileID: 21300000, guid: fd8fd3f942c31034897104d63048e6dd, type: 3}
+  - {fileID: 21300000, guid: 76c1b81532037e243b3b6e3b531d67d8, type: 3}
+  healthRenderer: {fileID: 0}
+  switchTime: 0.5
   health: 3
 --- !u!1001 &1114051680
 PrefabInstance:
@@ -2534,6 +2543,7 @@ MonoBehaviour:
   gameOverImage: {fileID: 309841589}
   youWonSprite: {fileID: 21300000, guid: 171d6322caaa12840a626a4cce2bcd61, type: 3}
   completedSprite: {fileID: 21300000, guid: 171d6322caaa12840a626a4cce2bcd61, type: 3}
+  currentcount: 1
 --- !u!4 &1244121773
 Transform:
   m_ObjectHideFlags: 0

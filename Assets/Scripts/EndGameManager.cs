@@ -17,6 +17,8 @@ public class EndGameManager : MonoBehaviour
     {
        
         gameStatusText.enabled = false;
+        gameOverImage.gameObject.SetActive(false);
+        gameStatusText.enabled = false;
     }
 
     // Update is called once per frame
@@ -33,6 +35,7 @@ public class EndGameManager : MonoBehaviour
 
             Time.timeScale = 0;
             gameStatusText.text = "Game Over";
+            gameOverImage.gameObject.SetActive(true);
             gameOverImage.sprite = youLostSprite;
             gameStatusText.enabled = true;
         }
