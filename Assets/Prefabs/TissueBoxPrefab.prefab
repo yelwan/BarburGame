@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 2927734941192526343}
   - component: {fileID: 6836183410649402990}
   - component: {fileID: 3770220435833329561}
-  m_Layer: 0
+  - component: {fileID: 9017318155516071242}
+  m_Layer: 6
   m_Name: TissueBoxPrefab
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -102,6 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsDragging: 0
   IsDraggable: 1
+  hasBeenDropped: 0
   input: {fileID: 2927734941192526343}
 --- !u!114 &2927734941192526343
 MonoBehaviour:
@@ -163,7 +165,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.15597832, y: -0.7799008}
+  m_Offset: {x: 0.06926727, y: -0.14567947}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -174,5 +176,18 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.8854434, y: 2.885448}
+  m_Size: {x: 2.150467, y: 3.2766495}
   m_EdgeRadius: 0
+--- !u!114 &9017318155516071242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3250950864493124776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbd3cb501baabab42bcddb867341073d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tissueRenderer: {fileID: 7084245567396197105}

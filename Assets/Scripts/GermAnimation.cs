@@ -13,7 +13,7 @@ public class GermAnimation : MonoBehaviour
 
     Sprite[][] AllAnimSprites;
     public int germMag;
-    [SerializeField] private int maxMagnitude = 2;
+
 
     [SerializeField] SpriteRenderer germRenderer;
     public GermFactory factory;

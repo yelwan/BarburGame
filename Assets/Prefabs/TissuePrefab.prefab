@@ -14,7 +14,10 @@ GameObject:
   - component: {fileID: 4229642610256170181}
   - component: {fileID: 2264541094653917676}
   - component: {fileID: -2976059606151666904}
-  m_Layer: 0
+  - component: {fileID: 2025012931763424571}
+  - component: {fileID: 6778743448387170997}
+  - component: {fileID: 6165240628477177724}
+  m_Layer: 6
   m_Name: TissuePrefab
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -161,6 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsDragging: 0
   IsDraggable: 1
+  hasBeenDropped: 0
   input: {fileID: -2976059606151666904}
 --- !u!114 &-2976059606151666904
 MonoBehaviour:
@@ -176,3 +180,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   isDragging: 0
+--- !u!114 &2025012931763424571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2648349513495428027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbd3cb501baabab42bcddb867341073d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tissueRenderer: {fileID: 5738345901992668573}
+--- !u!114 &6778743448387170997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2648349513495428027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03bb2c61a9773e24ab4888c0d83d7640, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dragAndDrop: {fileID: 0}
+  tissue: {fileID: 4229642610256170181}
+--- !u!114 &6165240628477177724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2648349513495428027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03bb2c61a9773e24ab4888c0d83d7640, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dragAndDrop: {fileID: 2264541094653917676}
+  tissue: {fileID: 4229642610256170181}

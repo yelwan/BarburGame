@@ -38,6 +38,7 @@ public class EndGameManager : MonoBehaviour
             gameOverImage.gameObject.SetActive(true);
             gameOverImage.sprite = youLostSprite;
             gameStatusText.enabled = true;
+            SceneManagement.Instance.restartLevelButton.gameObject.SetActive(true);
         }
         else if (gameDuration <= 0)
         {
@@ -45,6 +46,7 @@ public class EndGameManager : MonoBehaviour
             gameStatusText.text = "You Won";
             gameStatusText.enabled = true;
             SceneManagement.Instance.ShowGameOver("Tissue Team");
+            SceneManagement.Instance.nextLevelButton.gameObject.SetActive(true);
         }
     }
 }

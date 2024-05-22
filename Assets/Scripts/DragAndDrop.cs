@@ -6,8 +6,8 @@ public class DragAndDrop : MonoBehaviour
    
     private Vector3 offset;
     public bool IsDragging = false;
-    [SerializeField] bool IsDraggable;
-    private bool hasBeenDropped = false;
+    public bool IsDraggable;
+    public bool hasBeenDropped = false;
     [SerializeField] InputManager input;
     private void Awake () {
         input.RegisterToInputEvents(HandleMouseEvent);

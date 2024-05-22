@@ -6,17 +6,17 @@ using UnityEngine.UI;
 
 public class FactoryAnimation : MonoBehaviour
 {
+
     private float timer = 0f;
     [SerializeField] Renderer tissueRenderer;
     [SerializeField] InputManager inputManager;
     [SerializeField] Text tissueText;
     private bool isCoroutineActive = false;
-
     private void Awake()
     {
         inputManager.RegisterToInputEvents(StartCreation);
     }
-
+    
     void StartCreation(MouseInputs NewMouseInputs, Vector3 MousePosition)
     {
         if(NewMouseInputs==MouseInputs.OnMouseUp && !isCoroutineActive)
@@ -34,7 +34,7 @@ public class FactoryAnimation : MonoBehaviour
         inputManager.SetIsCreatable(false);
         timer = delaySeconds;
 
-        while (timer >= 0)
+        while (timer > 0)
         {
             UpdateTimerText();
             UpdateTissueColor();
@@ -42,9 +42,11 @@ public class FactoryAnimation : MonoBehaviour
             yield return new WaitForSeconds(1f);
             timer -= 1;
         }
-
+        UpdateTimerText();
+        UpdateTissueColor();
         inputManager.SetIsCreatable(true);
         isCoroutineActive = false;
+        
     }
     private void UpdateTissueColor()
     {
@@ -61,11 +63,6 @@ public class FactoryAnimation : MonoBehaviour
             tissueText.text = "Time Left: " + Mathf.Round(timer).ToString();
         }
     }
-
-   
-
-
-    
     
 
 }

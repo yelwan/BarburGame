@@ -12,13 +12,14 @@ public class SceneManagement : MonoBehaviour
     public Image gameOverImage;
     public Sprite youWonSprite;
     public Sprite completedSprite;
+    public Button restartLevelButton;
+    [SerializeField] MouthObject Mouth;
     int scenecount = 3;
     [SerializeField] int currentcount = 0;
 
     private void Start()
     {
         Instance = this;
-        // InitUI();
     }
 
     private void OnEnable()
@@ -33,7 +34,6 @@ public class SceneManagement : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-
         InitUI();
         Time.timeScale = 1;
     }
@@ -46,6 +46,13 @@ public class SceneManagement : MonoBehaviour
             nextLevelButton.gameObject.SetActive(false);
             nextLevelButton.onClick.RemoveAllListeners();
             nextLevelButton.onClick.AddListener(LoadNextLevel);
+            
+        }
+        if (restartLevelButton != null)
+        {
+            restartLevelButton.gameObject.SetActive(false);
+            restartLevelButton.onClick.RemoveAllListeners();
+            restartLevelButton.onClick.AddListener(RestartLevel);
         }
     }
     public void ShowGameOver(string winnerName)
@@ -55,15 +62,9 @@ public class SceneManagement : MonoBehaviour
         {
             gameOverImage.gameObject.SetActive(true);
             gameOverImage.sprite = youWonSprite;
-            nextLevelButton.gameObject.SetActive(true);
         }
-        else if (currentcount == scenecount)
-        {
-            gameOverImage.gameObject.SetActive(true);
-            gameOverImage.sprite = completedSprite;
-        }
-        winnerText.text = "Winner: " + winnerName;
 
+        winnerText.text = "Winner: " + winnerName;
     }
 
     private void LoadNextLevel()
@@ -76,7 +77,11 @@ public class SceneManagement : MonoBehaviour
         }
         else if (currentcount == scenecount - 1)
         {
-            ShowGameOver("Game Completed");
+            SceneManager.LoadScene(0);
         }
+    }
+    private void RestartLevel()
+    {
+        SceneManager.LoadScene(currentcount);
     }
 }
