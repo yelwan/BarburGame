@@ -12,34 +12,42 @@ public class GermAnimation : MonoBehaviour
     [SerializeField] Sprite AnimSpritesBB;
 
     Sprite[][] AllAnimSprites;
-    public int germMag;
+    public int germMag=7;
 
 
     [SerializeField] SpriteRenderer germRenderer;
-    public GermFactory factory;
     private Sprite currentSprite;
     private int counter;
-    public float switchTime = 0.5f; 
-    void OnGUI(){
-}
+    public float switchTime = 0.5f;
+    void OnGUI()
+    {
+    }
     void Start()
     {
-        
-        AllAnimSprites = new Sprite[][] { AnimSpritesP, AnimSpritesO, AnimSpritesG, AnimSpritesR,   AnimSpritesB };
+
+        AllAnimSprites = new Sprite[][] { AnimSpritesP, AnimSpritesO, AnimSpritesG, AnimSpritesR, AnimSpritesB};
         counter = 0;
         germRenderer = GetComponent<SpriteRenderer>();
-        StartCoroutine("SwitchSprite");
+        StartCoroutine(SwitchSprite());
     }
-    private IEnumerator SwitchSprite(){
-        if (germMag > 0)
+    private IEnumerator SwitchSprite()
+    {
+        while (true)
         {
-            currentSprite = AllAnimSprites[germMag-1][counter++ % AllAnimSprites[germMag].Length];
-            germRenderer.sprite = currentSprite;
-        }
-        else germRenderer.sprite = AnimSpritesBB;
+            if (germMag > 0 && germMag < AllAnimSprites.Length)
+            {
+                currentSprite = AllAnimSprites[germMag][counter++ % AllAnimSprites[germMag].Length];
+                germRenderer.sprite = currentSprite;
+            }
+            else
+            {
+                currentSprite = AnimSpritesBB;
+                germRenderer.sprite = currentSprite;
+            }
 
-        yield return new WaitForSeconds(switchTime);
-	StartCoroutine("SwitchSprite");
-}
-   
+            yield return new WaitForSeconds(switchTime);
+
+        }
+
+    }
 }

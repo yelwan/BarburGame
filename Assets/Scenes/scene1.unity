@@ -2788,7 +2788,7 @@ MonoBehaviour:
   - {fileID: 1921037223}
   GermsCloseness: {fileID: 1325583946}
   germcloseText: {fileID: 1718902015}
-  maxMagnitude: 4
+  maxMagnitude: 12
 --- !u!114 &1175592006
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ public class GermFactory : MonoBehaviour
     // GermObject objects components
     [SerializeField] Collider2D GermsCloseness;
     [SerializeField] Text germcloseText;
-    [SerializeField] int maxMagnitude;
+    [SerializeField] int maxMagnitude=8;
 
 
 
@@ -27,12 +27,11 @@ public class GermFactory : MonoBehaviour
         {
           GameObject germClone =  Instantiate(germPrefab, spawnPosition, Quaternion.identity);
           GermAnimation germAnim =  germClone.GetComponent<GermAnimation>();
-          germAnim.factory = this;
           GermObject germObject = germClone.GetComponent<GermObject>();
           germObject.germcloseText = germcloseText;
           germObject.spawningArea = GetComponent<GermCorutineManager>().spawningArea;
           germObject.GermsCloseness = GermsCloseness;
-          germObject.magnitude = germAnim.germMag = Random.Range(1, maxMagnitude-1); 
+          germObject.magnitude = germAnim.germMag = Random.Range(0, maxMagnitude-1); 
         }
     }
     

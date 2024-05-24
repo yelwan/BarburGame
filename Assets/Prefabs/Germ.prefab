@@ -118,7 +118,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.23383164, y: -0.0029556453}
@@ -209,10 +209,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 059172ab5f7309d4ea506fcd61b1eb42, type: 3}
   - {fileID: 21300000, guid: 060e9123539c31541a8a333d29781cfd, type: 3}
   AnimSpritesBB: {fileID: 21300000, guid: 38f2a903eb1b1c041b8ca53c6ee7efbd, type: 3}
-  germMag: 1
-  maxMagnitude: 5
+  germMag: 11
   germRenderer: {fileID: 4676297572715209810}
-  factory: {fileID: 0}
   switchTime: 0.1
 --- !u!114 &8842978377245976520
 MonoBehaviour:
