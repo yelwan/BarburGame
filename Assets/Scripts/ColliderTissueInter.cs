@@ -11,6 +11,7 @@ public class ColliderTissueInter : MonoBehaviour
         TissueObject tissueCollider = collision.gameObject.GetComponent<TissueObject>();
 
         DragAndDrop dragAndDrop = collision.gameObject.GetComponent<DragAndDrop>();
+        GermAnimation germAnim = germscript.GetComponent<GermAnimation>();
 
         if (tissueCollider != null && dragAndDrop != null)
         {
@@ -18,6 +19,7 @@ public class ColliderTissueInter : MonoBehaviour
             {
                 int germMagnitude = germscript.magnitude;
                 int tissueMagnitude = tissueCollider.magnitude;
+
                 while (tissueMagnitude > germMagnitude)
                 {
 
@@ -40,7 +42,7 @@ public class ColliderTissueInter : MonoBehaviour
                     {
                         break;
                     }
-                    germscript.magnitude = germMagnitude;
+                    germscript.magnitude= germAnim.germMag = germMagnitude;
 
                 }
                 

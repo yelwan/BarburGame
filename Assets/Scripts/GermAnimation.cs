@@ -25,7 +25,7 @@ public class GermAnimation : MonoBehaviour
     void Start()
     {
         
-        AllAnimSprites = new Sprite[][] { AnimSpritesP, AnimSpritesO, AnimSpritesG, AnimSpritesR,   AnimSpritesB };
+        AllAnimSprites = new Sprite[][] { AnimSpritesP, AnimSpritesO, AnimSpritesG, AnimSpritesB, AnimSpritesR };
         counter = 0;
         germRenderer = GetComponent<SpriteRenderer>();
         StartCoroutine("SwitchSprite");

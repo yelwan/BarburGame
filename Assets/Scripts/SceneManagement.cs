@@ -35,6 +35,7 @@ public class SceneManagement : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         InitUI();
+        AudioListener.pause = false;
         Time.timeScale = 1;
     }
 
@@ -61,6 +62,7 @@ public class SceneManagement : MonoBehaviour
         if (currentcount < scenecount)
         {
             gameOverImage.gameObject.SetActive(true);
+            AudioListener.pause = true;
             gameOverImage.sprite = youWonSprite;
         }
 
@@ -72,16 +74,20 @@ public class SceneManagement : MonoBehaviour
         if (currentcount < scenecount - 1)
         {
             currentcount++;
+            AudioListener.pause = false;
             SceneManager.LoadScene(currentcount);
         }
         else if (currentcount == scenecount - 1)
         {
+            AudioListener.pause = false;
             SceneManager.LoadScene(0);
         }
     }
 
     private void RestartLevel()
     {
+        AudioListener.pause = false;
         SceneManager.LoadScene(currentcount);
+
     }
 }

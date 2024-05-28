@@ -32,6 +32,7 @@ public class EndGameManager : MonoBehaviour
 
             Time.timeScale = 0;
             gameOverImage.gameObject.SetActive(true);
+            AudioListener.pause = true;
             gameOverImage.sprite = youLostSprite;
             SceneManagement.Instance.restartLevelButton.gameObject.SetActive(true);
         }
