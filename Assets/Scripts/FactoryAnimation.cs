@@ -10,8 +10,8 @@ public class FactoryAnimation : MonoBehaviour
     private float timer = 0f;
     [SerializeField] Renderer tissueRenderer;
     [SerializeField] InputManager inputManager;
-    [SerializeField] Text tissueText;
     private bool isCoroutineActive = false;
+
     private void Awake()
     {
         inputManager.RegisterToInputEvents(StartCreation);
@@ -36,13 +36,11 @@ public class FactoryAnimation : MonoBehaviour
 
         while (timer > 0)
         {
-            UpdateTimerText();
             UpdateTissueColor();
             if (timer == 0) break; 
             yield return new WaitForSeconds(1f);
             timer -= 1;
         }
-        UpdateTimerText();
         UpdateTissueColor();
         inputManager.SetIsCreatable(true);
         isCoroutineActive = false;
@@ -56,6 +54,72 @@ public class FactoryAnimation : MonoBehaviour
             tissueRenderer.material.color = new Color(darkness, darkness, darkness);
         }
     }
+ 
+    
+
+}
+/*
+ using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+
+
+public class FactoryAnimation : MonoBehaviour
+{
+
+    private int timer = 0;
+    [SerializeField] InputManager inputManager;
+    [SerializeField] Text tissueText;
+    SpriteRenderer tissueRenderer;
+
+    private bool isCoroutineActive = false;
+    private void Awake()
+    {
+        inputManager.RegisterToInputEvents(StartCreation);
+         tissueRenderer = GetComponent<SpriteRenderer>();
+
+    }
+
+    void StartCreation(MouseInputs NewMouseInputs, Vector3 MousePosition)
+    {
+        if(NewMouseInputs==MouseInputs.OnMouseUp && !isCoroutineActive)
+           StartObjectCreationCoroutine(3);
+    }
+
+    private void StartObjectCreationCoroutine(int delaySeconds)
+    {
+        StartCoroutine(ObjectCreationCoroutine(delaySeconds));
+    }
+
+    private IEnumerator ObjectCreationCoroutine(int delaySeconds)
+    {
+        isCoroutineActive = true;
+        inputManager.SetIsCreatable(false);
+        timer = delaySeconds;
+
+        while (timer > 0)
+        {
+            UpdateTimerText();
+            UpdateCoolDown();
+            if (timer == 0) break; 
+            yield return new WaitForSeconds(1f);
+            timer -= 1;
+        }
+        UpdateTimerText();
+        UpdateCoolDown();
+        inputManager.SetIsCreatable(true);
+        isCoroutineActive = false;
+        
+    }
+    private void UpdateCoolDown()
+    {
+        if (tissueRenderer != null)
+        {
+            tissueRenderer.sprite = CoolDownSprites[timer];
+        }
+    }
     private void UpdateTimerText()
     {
         if (tissueText != null)
@@ -66,3 +130,5 @@ public class FactoryAnimation : MonoBehaviour
     
 
 }
+
+ */

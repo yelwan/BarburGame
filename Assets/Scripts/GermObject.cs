@@ -67,6 +67,9 @@ public class GermObject : MonoBehaviour
     private IEnumerator ShowGermsCloseText()
     {
         yield return new WaitForSeconds(delayBeforeTextChange);
-        germcloseText.text = "Germs getting too close, Go Down!";
+        germcloseText.text = "Germs getting close!";
+        yield return new WaitForSeconds(3);
+        germcloseText.text = "";
+
     }
 }

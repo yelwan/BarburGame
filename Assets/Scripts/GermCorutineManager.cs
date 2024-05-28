@@ -25,17 +25,17 @@ public class GermCorutineManager : MonoBehaviour
                 if (countdownTextUI != null)
                 {
                     isSpawning = true;
-                    applyCountdownText("5");
+                    applyCountdownText("Germ Attack in 5");
                     yield return new WaitForSeconds(1f);
-                    applyCountdownText("4");
+                    applyCountdownText("Germ Attack in 4");
                     yield return new WaitForSeconds(1f);
-                    applyCountdownText("3");
+                    applyCountdownText("Germ Attack in 3");
                     yield return new WaitForSeconds(1f);
-                    applyCountdownText("2");
+                    applyCountdownText("Germ Attack in 2");
                     yield return new WaitForSeconds(1f);
-                    applyCountdownText("1");
+                    applyCountdownText("Germ Attack in 1");
                     yield return new WaitForSeconds(1f);
-                    applyCountdownText("Germ Attack");
+                    applyCountdownText("Germ Attack now!");
                     yield return new WaitForSeconds(1f);
                     if (spawningArea != null)
                     {

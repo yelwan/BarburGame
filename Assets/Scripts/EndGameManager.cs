@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class EndGameManager : MonoBehaviour
 {
-    [SerializeField] Text gameStatusText;
     [SerializeField] float gameDuration = 60f;
     [SerializeField] Text GameTime;
     [SerializeField] MouthObject Mouth;
@@ -16,9 +15,7 @@ public class EndGameManager : MonoBehaviour
     void Start()
     {
        
-        gameStatusText.enabled = false;
         gameOverImage.gameObject.SetActive(false);
-        gameStatusText.enabled = false;
     }
 
     // Update is called once per frame
@@ -34,17 +31,13 @@ public class EndGameManager : MonoBehaviour
         {
 
             Time.timeScale = 0;
-            gameStatusText.text = "Game Over";
             gameOverImage.gameObject.SetActive(true);
             gameOverImage.sprite = youLostSprite;
-            gameStatusText.enabled = true;
             SceneManagement.Instance.restartLevelButton.gameObject.SetActive(true);
         }
         else if (gameDuration <= 0)
         {
             Time.timeScale = 0;
-            gameStatusText.text = "You Won";
-            gameStatusText.enabled = true;
             SceneManagement.Instance.ShowGameOver("Tissue Team");
             SceneManagement.Instance.nextLevelButton.gameObject.SetActive(true);
         }
