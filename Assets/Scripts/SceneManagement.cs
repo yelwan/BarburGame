@@ -20,6 +20,7 @@ public class SceneManagement : MonoBehaviour
     private void Start()
     {
         Instance = this;
+
     }
 
     private void OnEnable()
@@ -80,6 +81,7 @@ public class SceneManagement : MonoBehaviour
             SceneManager.LoadScene(0);
         }
     }
+
     private void RestartLevel()
     {
         SceneManager.LoadScene(currentcount);
