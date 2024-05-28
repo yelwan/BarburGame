@@ -9,6 +9,7 @@ public class GamePauseManager : MonoBehaviour
     [SerializeField] Image pauseimage;
 
 
+
     void Start()
     {
         pauseimage.sprite = playPauseSprites[1];

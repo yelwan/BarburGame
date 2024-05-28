@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class SceneManagement : MonoBehaviour
 {
     static public SceneManagement Instance;
-    public Text winnerText;
     public Button nextLevelButton;
     public Image gameOverImage;
     public Sprite youWonSprite;
@@ -65,7 +64,6 @@ public class SceneManagement : MonoBehaviour
             gameOverImage.sprite = youWonSprite;
         }
 
-        winnerText.text = "Winner: " + winnerName;
     }
 
     private void LoadNextLevel()

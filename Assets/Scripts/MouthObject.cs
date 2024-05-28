@@ -9,6 +9,7 @@ public class MouthObject : MonoBehaviour
     private Sprite currentSprite;
     private int counter;
     public float switchTime = 0.5f;
+    [SerializeField] AudioSource HealthSound;
 
     public int health = 3;
     private void Update()
@@ -35,6 +36,7 @@ public class MouthObject : MonoBehaviour
             if (germController != null)
             {
                 health--;
+                HealthSound.Play();
                 StartCoroutine("SwitchSprite");
 
             }

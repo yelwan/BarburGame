@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9044775917971715941}
   - component: {fileID: 9070958833298465280}
   - component: {fileID: 8842978377245976520}
-  - component: {fileID: -3771026036518457253}
+  - component: {fileID: -5168140177626268516}
   m_Layer: 0
   m_Name: Germ
   m_TagString: Untagged
@@ -232,7 +232,9 @@ MonoBehaviour:
   spawningArea: {fileID: 0}
   movementSpeed: 2
   magnitude: -20
---- !u!114 &-3771026036518457253
+  TissueWins: {fileID: 0}
+  GermWins: {fileID: 0}
+--- !u!114 &-5168140177626268516
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -244,4 +246,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a01cada6b5f544e4ab8975952928c8e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  germscript: {fileID: 9070958833298465280}
+  germscript: {fileID: 8842978377245976520}

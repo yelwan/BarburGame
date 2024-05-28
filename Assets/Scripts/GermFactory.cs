@@ -13,7 +13,8 @@ public class GermFactory : MonoBehaviour
     [SerializeField] Text germcloseText;
     [SerializeField] int maxMagnitude;
     [SerializeField] Collider2D spawningAreaCollider;
-
+    [SerializeField] AudioSource TissueWins;
+    [SerializeField] AudioSource GermWins;
 
 
 
@@ -36,7 +37,10 @@ public class GermFactory : MonoBehaviour
           germObject.germcloseText = germcloseText;
           germObject.spawningArea = GetComponent<GermCorutineManager>().spawningArea;
           germObject.GermsCloseness = GermsCloseness;
-          germObject.magnitude = germAnim.germMag = Random.Range(1, maxMagnitude-1); 
+          germObject.magnitude = germAnim.germMag = Random.Range(1, maxMagnitude-1);
+            germObject.TissueWins = TissueWins;
+            germObject.GermWins = GermWins;
+
         }
     }
     

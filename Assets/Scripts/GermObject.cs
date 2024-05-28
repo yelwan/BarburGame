@@ -15,6 +15,8 @@ public class GermObject : MonoBehaviour
     public float movementSpeed = 5f;
     private Rigidbody2D rb;
     public int magnitude;
+    public AudioSource TissueWins;
+    public AudioSource GermWins;
     void Start()
     {
         magnitude = germAnim.germMag;

@@ -6,6 +6,8 @@ public class CreateTissueObject : MonoBehaviour
     private GameObject i_tissueObject;
     private GameObject instantiatedObject;
     [SerializeField] InputManager input;
+    [SerializeField] AudioSource CreationSound;
+
     private void HandleMouseEvent (MouseInputs NewMouseInputs, Vector3 MousePosition)
     {
         
@@ -30,6 +32,7 @@ public class CreateTissueObject : MonoBehaviour
     }
     public GameObject InstantiateTissueObject()
     {
+        CreationSound.Play();
         instantiatedObject = Instantiate(originalPrefab, transform.position, Quaternion.identity);
         return instantiatedObject;
     }

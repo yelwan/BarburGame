@@ -9,6 +9,8 @@ public class DragAndDrop : MonoBehaviour
     public bool IsDraggable;
     public bool hasBeenDropped = false;
     [SerializeField] InputManager input;
+    [SerializeField] AudioSource DropSound;
+
     private void Awake () {
         input.RegisterToInputEvents(HandleMouseEvent);
     }
@@ -38,6 +40,7 @@ public class DragAndDrop : MonoBehaviour
                 IsDragging = false;
                 DropDelegate?.Invoke(MousePosition + offset);
                 hasBeenDropped = true;
+                DropSound.Play();
                 IsDraggable = false;
             }
         }

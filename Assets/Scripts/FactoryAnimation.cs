@@ -11,6 +11,8 @@ public class FactoryAnimation : MonoBehaviour
     [SerializeField] Renderer tissueRenderer;
     [SerializeField] InputManager inputManager;
     private bool isCoroutineActive = false;
+    [SerializeField] AudioSource creatableSound;
+
 
     private void Awake()
     {
@@ -43,6 +45,7 @@ public class FactoryAnimation : MonoBehaviour
         }
         UpdateTissueColor();
         inputManager.SetIsCreatable(true);
+        creatableSound.Play();
         isCoroutineActive = false;
         
     }
