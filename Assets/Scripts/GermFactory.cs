@@ -7,13 +7,12 @@ public class GermFactory : MonoBehaviour
 {
    
     [SerializeField] GameObject germPrefab;
-    int randompos;
     Vector3 spawnPosition;
-    public Transform []shootingPosition;
     // GermObject objects components
     [SerializeField] Collider2D GermsCloseness;
     [SerializeField] Text germcloseText;
     [SerializeField] int maxMagnitude;
+    [SerializeField] Collider2D spawningAreaCollider;
 
 
 
@@ -21,11 +20,64 @@ public class GermFactory : MonoBehaviour
     public void createGerm()
 
     {
-        randompos = Random.Range(0, 4);
-         spawnPosition = shootingPosition[randompos].position;
+        if (spawningAreaCollider != null)
+        {
+            Bounds colliderBounds = spawningAreaCollider.bounds;
+            float randomX = Random.Range(colliderBounds.min.x, colliderBounds.max.x);
+            spawnPosition = new Vector3(randomX, colliderBounds.min.y, 0);
+        }
+
         if (germPrefab != null)
         {
-          GameObject germClone =  Instantiate(germPrefab, spawnPosition, Quaternion.identity);
+            GameObject germClone = Instantiate(germPrefab, spawnPosition, Quaternion.identity);
+            GermAnimation germAnim =  germClone.GetComponent<GermAnimation>();
+          germAnim.factory = this;
+          GermObject germObject = germClone.GetComponent<GermObject>();
+          germObject.germcloseText = germcloseText;
+          germObject.spawningArea = GetComponent<GermCorutineManager>().spawningArea;
+          germObject.GermsCloseness = GermsCloseness;
+          germObject.magnitude = germAnim.germMag = Random.Range(1, maxMagnitude-1); 
+        }
+    }
+    
+}
+/*
+ using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+// the job of this script is to Instantiate germ prefabs and Initialized variables for GermObject script.
+public class GermFactory : MonoBehaviour
+{
+   
+    [SerializeField] GameObject germPrefab;
+    int randompos;
+    Vector3 spawnPosition;
+    public Transform []shootingPosition;
+    // GermObject objects components
+    [SerializeField] Collider2D GermsCloseness;
+    [SerializeField] Text germcloseText;
+    [SerializeField] int maxMagnitude;
+    [SerializeField] Collider2D spawningAreaCollider;
+    GameObject germClone;
+
+
+
+    public void createGerm()
+
+    {
+      //  randompos = Random.Range(0, 4);
+        // spawnPosition = shootingPosition[randompos].position;
+        if (germPrefab != null)
+        {
+            if (spawningAreaCollider != null)
+            {
+                Bounds colliderBounds = spawningAreaCollider.bounds;
+                float randomX = Random.Range(colliderBounds.min.x, colliderBounds.max.x);
+                 spawnPosition = new Vector3(randomX, colliderBounds.min.y, 0);
+                 germClone = Instantiate(germPrefab, spawnPosition, Quaternion.identity);
+            }
+           // GameObject germClone =  Instantiate(germPrefab, spawnPosition, Quaternion.identity);
           GermAnimation germAnim =  germClone.GetComponent<GermAnimation>();
           germAnim.factory = this;
           GermObject germObject = germClone.GetComponent<GermObject>();
