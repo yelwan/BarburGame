@@ -16,7 +16,6 @@ public class GermAnimation : MonoBehaviour
 
 
     [SerializeField] SpriteRenderer germRenderer;
-    public GermFactory factory;
     private Sprite currentSprite;
     private int counter;
     public float switchTime = 0.5f; 
@@ -30,16 +29,24 @@ public class GermAnimation : MonoBehaviour
         germRenderer = GetComponent<SpriteRenderer>();
         StartCoroutine("SwitchSprite");
     }
-    private IEnumerator SwitchSprite(){
-        if (germMag > 0)
+    private IEnumerator SwitchSprite()
+    {
+        while (true)
         {
-            currentSprite = AllAnimSprites[germMag-1][counter++ % AllAnimSprites[germMag].Length];
-            germRenderer.sprite = currentSprite;
-        }
-        else germRenderer.sprite = AnimSpritesBB;
+            if (germMag > 0 && germMag < AllAnimSprites.Length)
+            {
+                currentSprite = AllAnimSprites[germMag][counter++ % AllAnimSprites[germMag].Length];
+                germRenderer.sprite = currentSprite;
+            }
+            else
+            {
+                currentSprite = AnimSpritesBB;
+                germRenderer.sprite = currentSprite;
+            }
 
-        yield return new WaitForSeconds(switchTime);
-	StartCoroutine("SwitchSprite");
-}
-   
+            yield return new WaitForSeconds(switchTime);
+
+        }
+
+    }
 }

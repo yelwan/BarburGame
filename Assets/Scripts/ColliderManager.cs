@@ -11,12 +11,12 @@ public class ColliderManager : MonoBehaviour
             return _instance;
         }
         private set => _instance = value;
-}
+    }
 
-    private List<Collider2D> colliders = new List<Collider2D>();
+    public List<Collider2D> colliders = new List<Collider2D>();
     private void Awake()
     {
-            _instance = this;
+        _instance = this;
     }
 
     public void RegisterCollider(Collider2D collider)

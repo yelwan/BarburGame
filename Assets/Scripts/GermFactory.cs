@@ -32,7 +32,7 @@ public class GermFactory : MonoBehaviour
         {
             GameObject germClone = Instantiate(germPrefab, spawnPosition, Quaternion.identity);
             GermAnimation germAnim =  germClone.GetComponent<GermAnimation>();
-          germAnim.factory = this;
+          //germAnim.factory = this;
           GermObject germObject = germClone.GetComponent<GermObject>();
           germObject.germcloseText = germcloseText;
           germObject.spawningArea = GetComponent<GermCorutineManager>().spawningArea;

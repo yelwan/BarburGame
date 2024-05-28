@@ -483,6 +483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7329ff5b11b76140aed17d0b6b38a56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliders: []
 --- !u!4 &142255024
 Transform:
   m_ObjectHideFlags: 0
@@ -1322,9 +1323,17 @@ PrefabInstance:
       value: -0.5572281
       objectReference: {fileID: 0}
     - target: {fileID: 3918879550284392374, guid: 9f77a217eebd6764184c731636a2e7e0, type: 3}
+      propertyPath: factory
+      value: 
+      objectReference: {fileID: 1942375507}
+    - target: {fileID: 3918879550284392374, guid: 9f77a217eebd6764184c731636a2e7e0, type: 3}
       propertyPath: DropSound
       value: 
       objectReference: {fileID: 1728539050}
+    - target: {fileID: 6836183410649402990, guid: 9f77a217eebd6764184c731636a2e7e0, type: 3}
+      propertyPath: factory
+      value: 
+      objectReference: {fileID: 1942375507}
     - target: {fileID: 6836183410649402990, guid: 9f77a217eebd6764184c731636a2e7e0, type: 3}
       propertyPath: magnitude
       value: 2
@@ -1387,6 +1396,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1305786793}
     - target: {fileID: 2264541094653917676, guid: 6b30b7d94ad52a24e9179993a78649e5, type: 3}
+      propertyPath: factory
+      value: 
+      objectReference: {fileID: 1252194498}
+    - target: {fileID: 2264541094653917676, guid: 6b30b7d94ad52a24e9179993a78649e5, type: 3}
       propertyPath: DropSound
       value: 
       objectReference: {fileID: 1728539050}
@@ -1446,6 +1459,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4229642610256170181, guid: 6b30b7d94ad52a24e9179993a78649e5, type: 3}
+      propertyPath: factory
+      value: 
+      objectReference: {fileID: 1252194498}
     - target: {fileID: 4229642610256170181, guid: 6b30b7d94ad52a24e9179993a78649e5, type: 3}
       propertyPath: magnitude
       value: 1
@@ -1713,8 +1730,8 @@ Transform:
   m_GameObject: {fileID: 830794940}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 85.6, y: 76.853, z: 0}
-  m_LocalScale: {x: 3.712796, y: 3.5249658, z: 0}
+  m_LocalPosition: {x: 85.52, y: 77.875, z: 0}
+  m_LocalScale: {x: 3.712796, y: 4.8725076, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1795,6 +1812,7 @@ MonoBehaviour:
   tissueRenderer: {fileID: 913711285}
   inputManager: {fileID: 913711290}
   creatableSound: {fileID: 1126627566}
+  tissueObjects: []
 --- !u!1001 &923981820
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2263,6 +2281,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3918879550284392374, guid: 91fbb8a2a11ea2c4c9e15e6453c28179, type: 3}
+      propertyPath: factory
+      value: 
+      objectReference: {fileID: 913711293}
+    - target: {fileID: 3918879550284392374, guid: 91fbb8a2a11ea2c4c9e15e6453c28179, type: 3}
       propertyPath: DropSound
       value: 
       objectReference: {fileID: 1728539050}
@@ -2286,6 +2308,10 @@ PrefabInstance:
       propertyPath: colliderTissueMap.Array.data[3]
       value: 
       objectReference: {fileID: 2014818860}
+    - target: {fileID: 6836183410649402990, guid: 91fbb8a2a11ea2c4c9e15e6453c28179, type: 3}
+      propertyPath: factory
+      value: 
+      objectReference: {fileID: 913711293}
     - target: {fileID: 6836183410649402990, guid: 91fbb8a2a11ea2c4c9e15e6453c28179, type: 3}
       propertyPath: magnitude
       value: 4
@@ -2960,6 +2986,7 @@ MonoBehaviour:
   tissueRenderer: {fileID: 1252194491}
   inputManager: {fileID: 1252194493}
   creatableSound: {fileID: 1126627566}
+  tissueObjects: []
 --- !u!1 &1257967083
 GameObject:
   m_ObjectHideFlags: 0
@@ -3320,6 +3347,7 @@ MonoBehaviour:
   tissueRenderer: {fileID: 713964308}
   inputManager: {fileID: 1438465360}
   creatableSound: {fileID: 1126627566}
+  tissueObjects: []
 --- !u!1001 &1473004837
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3409,9 +3437,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3918879550284392374, guid: 09de04affb06a0146b25fa84742202bf, type: 3}
+      propertyPath: factory
+      value: 
+      objectReference: {fileID: 1438465363}
+    - target: {fileID: 3918879550284392374, guid: 09de04affb06a0146b25fa84742202bf, type: 3}
       propertyPath: DropSound
       value: 
       objectReference: {fileID: 1728539050}
+    - target: {fileID: 6836183410649402990, guid: 09de04affb06a0146b25fa84742202bf, type: 3}
+      propertyPath: factory
+      value: 
+      objectReference: {fileID: 1438465363}
     - target: {fileID: 6836183410649402990, guid: 09de04affb06a0146b25fa84742202bf, type: 3}
       propertyPath: magnitude
       value: 3
@@ -4843,6 +4879,7 @@ MonoBehaviour:
   tissueRenderer: {fileID: 393918609}
   inputManager: {fileID: 1942375504}
   creatableSound: {fileID: 1126627566}
+  tissueObjects: []
 --- !u!1 &1996761426
 GameObject:
   m_ObjectHideFlags: 0
