@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TissueObject : MonoBehaviour
 {
-    
+    [SerializeField] FactoryAnimation factory;
     public int magnitude = 5;
     private int MaxQuantity;
     private int CurrentQuantity;
@@ -20,6 +20,9 @@ public class TissueObject : MonoBehaviour
     }
     private void HandleDrop(Vector3 Position)
     {
+        if (factory!=null) {
+            factory.HandleTissueDrop(this);
+        }
         IsAnotherObjectInCollider();
         if (!IsPlacementValid(Position))
         {

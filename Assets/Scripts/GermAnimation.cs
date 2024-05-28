@@ -12,7 +12,7 @@ public class GermAnimation : MonoBehaviour
     [SerializeField] Sprite AnimSpritesBB;
 
     Sprite[][] AllAnimSprites;
-    public int germMag=7;
+    public int germMag=1;
 
 
     [SerializeField] SpriteRenderer germRenderer;

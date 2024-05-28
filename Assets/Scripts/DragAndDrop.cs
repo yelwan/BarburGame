@@ -9,6 +9,8 @@ public class DragAndDrop : MonoBehaviour
     public bool IsDraggable;
     public bool hasBeenDropped = false;
     [SerializeField] InputManager input;
+
+    [SerializeField] FactoryAnimation factory;
     private void Awake () {
         input.RegisterToInputEvents(HandleMouseEvent);
     }
@@ -39,6 +41,7 @@ public class DragAndDrop : MonoBehaviour
                 DropDelegate?.Invoke(MousePosition + offset);
                 hasBeenDropped = true;
                 IsDraggable = false;
+                factory.HandleTissueDrop(GetComponent<TissueObject>());
             }
         }
 

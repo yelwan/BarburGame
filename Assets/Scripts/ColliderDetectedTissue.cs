@@ -39,6 +39,9 @@ public class ColliderDetectedTissue : MonoBehaviour
             DragAndDrop dragAndDrop = GetComponent<DragAndDrop>();
             if (dragAndDrop != null)
             {
+                if (ColliderManager.Instance.colliders.Contains(collider)) {
+                    currentColor = Color.green;
+                }
                 // Check if there are any other TissueObject colliders in the same area
                 Collider2D[] overlappingColliders = Physics2D.OverlapCircleAll(transform.position, myCollider.bounds.extents.magnitude);
 
@@ -56,10 +59,7 @@ public class ColliderDetectedTissue : MonoBehaviour
                 {
                     currentColor = Color.red;
                 }
-                else
-                {
-                    currentColor = Color.green;
-                }
+
             }
         }
     }
