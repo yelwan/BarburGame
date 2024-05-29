@@ -360,7 +360,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5863960678458461661, guid: f87a103cd01ef3f4a804afa8be735d36, type: 3}
       propertyPath: magnitude
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1730,8 +1730,8 @@ Transform:
   m_GameObject: {fileID: 830794940}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 85.52, y: 77.875, z: 0}
-  m_LocalScale: {x: 3.712796, y: 4.8725076, z: 0}
+  m_LocalPosition: {x: 85.38, y: 76.914, z: 0}
+  m_LocalScale: {x: 3.675668, y: 3.4195259, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1809,10 +1809,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ebd397b7a1701c41b2763c3dcf46059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnergySprites:
+  - {fileID: 21300000, guid: 8257cbcd2fc138e4194421c74e5ad6b6, type: 3}
+  - {fileID: 21300000, guid: 6f080168a30fb3c4d843eb5779e441a6, type: 3}
+  - {fileID: 21300000, guid: f9fb9cce9fd652443973b3a117a79792, type: 3}
+  - {fileID: 21300000, guid: aac6ddec7f8ddcc45a9ef66f4be3f47c, type: 3}
+  - {fileID: 21300000, guid: a0cd20c3d6ec45247bb4196e3ae3eb95, type: 3}
+  - {fileID: 21300000, guid: 84a366273b5f9544cb733e71c60e9134, type: 3}
+  - {fileID: 21300000, guid: ccdf811b0bc9e77488678ed42fcfb32f, type: 3}
+  - {fileID: 21300000, guid: 1dba9442cf37572448d791a3c63c9c22, type: 3}
+  - {fileID: 21300000, guid: d7f7a11efb3f8bc4da4b89c5c25dfb94, type: 3}
+  - {fileID: 21300000, guid: d29612d19d3d01443a3faf3d8d0389fc, type: 3}
+  - {fileID: 21300000, guid: 612586ca03b527943b48b7136f575e38, type: 3}
   tissueRenderer: {fileID: 913711285}
+  EnergyRenderer: {fileID: 1413875182}
   inputManager: {fileID: 913711290}
   creatableSound: {fileID: 1126627566}
-  tissueObjects: []
+  tissueObjects:
+  - {fileID: 1252194501}
+  - {fileID: 1438465366}
+  - {fileID: 913711296}
+  - {fileID: 1942375510}
+--- !u!114 &913711296 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5863960678458461661, guid: 34d5cdd803a313d4aa30a80a244976e9, type: 3}
+  m_PrefabInstance: {fileID: 923981820}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283738038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67588d876b2604545928029fd2f1afe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &923981820
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1919,7 +1947,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5863960678458461661, guid: 34d5cdd803a313d4aa30a80a244976e9, type: 3}
       propertyPath: magnitude
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2983,10 +3011,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ebd397b7a1701c41b2763c3dcf46059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnergySprites:
+  - {fileID: 21300000, guid: 8257cbcd2fc138e4194421c74e5ad6b6, type: 3}
+  - {fileID: 21300000, guid: 6f080168a30fb3c4d843eb5779e441a6, type: 3}
+  - {fileID: 21300000, guid: f9fb9cce9fd652443973b3a117a79792, type: 3}
+  - {fileID: 21300000, guid: aac6ddec7f8ddcc45a9ef66f4be3f47c, type: 3}
+  - {fileID: 21300000, guid: a0cd20c3d6ec45247bb4196e3ae3eb95, type: 3}
+  - {fileID: 21300000, guid: 84a366273b5f9544cb733e71c60e9134, type: 3}
+  - {fileID: 21300000, guid: ccdf811b0bc9e77488678ed42fcfb32f, type: 3}
+  - {fileID: 21300000, guid: 1dba9442cf37572448d791a3c63c9c22, type: 3}
+  - {fileID: 21300000, guid: d7f7a11efb3f8bc4da4b89c5c25dfb94, type: 3}
+  - {fileID: 21300000, guid: d29612d19d3d01443a3faf3d8d0389fc, type: 3}
+  - {fileID: 21300000, guid: 612586ca03b527943b48b7136f575e38, type: 3}
   tissueRenderer: {fileID: 1252194491}
+  EnergyRenderer: {fileID: 1413875182}
   inputManager: {fileID: 1252194493}
   creatableSound: {fileID: 1126627566}
-  tissueObjects: []
+  tissueObjects:
+  - {fileID: 1438465366}
+  - {fileID: 913711296}
+  - {fileID: 1942375510}
+  - {fileID: 1252194501}
+--- !u!114 &1252194501 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3534152078372617486, guid: 91034a742eb8da040b8fe30982737790, type: 3}
+  m_PrefabInstance: {fileID: 2047552918}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1252194475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67588d876b2604545928029fd2f1afe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1257967083
 GameObject:
   m_ObjectHideFlags: 0
@@ -3316,6 +3372,90 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1413875181
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1413875183}
+  - component: {fileID: 1413875182}
+  m_Layer: 0
+  m_Name: Energy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &1413875182
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1413875181}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 612586ca03b527943b48b7136f575e38, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 8.4, y: 6.000586}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1413875183
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1413875181}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 89.5, y: 61, z: -0.14451754}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1438465355 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2495639790617206555, guid: 93e7d0154b60bb346b541031b0ab20d8, type: 3}
@@ -3344,10 +3484,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ebd397b7a1701c41b2763c3dcf46059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnergySprites:
+  - {fileID: 21300000, guid: 8257cbcd2fc138e4194421c74e5ad6b6, type: 3}
+  - {fileID: 21300000, guid: 6f080168a30fb3c4d843eb5779e441a6, type: 3}
+  - {fileID: 21300000, guid: f9fb9cce9fd652443973b3a117a79792, type: 3}
+  - {fileID: 21300000, guid: aac6ddec7f8ddcc45a9ef66f4be3f47c, type: 3}
+  - {fileID: 21300000, guid: a0cd20c3d6ec45247bb4196e3ae3eb95, type: 3}
+  - {fileID: 21300000, guid: 84a366273b5f9544cb733e71c60e9134, type: 3}
+  - {fileID: 21300000, guid: ccdf811b0bc9e77488678ed42fcfb32f, type: 3}
+  - {fileID: 21300000, guid: 1dba9442cf37572448d791a3c63c9c22, type: 3}
+  - {fileID: 21300000, guid: d7f7a11efb3f8bc4da4b89c5c25dfb94, type: 3}
+  - {fileID: 21300000, guid: d29612d19d3d01443a3faf3d8d0389fc, type: 3}
+  - {fileID: 21300000, guid: 612586ca03b527943b48b7136f575e38, type: 3}
   tissueRenderer: {fileID: 713964308}
+  EnergyRenderer: {fileID: 1413875182}
   inputManager: {fileID: 1438465360}
   creatableSound: {fileID: 1126627566}
-  tissueObjects: []
+  tissueObjects:
+  - {fileID: 1252194501}
+  - {fileID: 1438465366}
+  - {fileID: 913711296}
+  - {fileID: 1942375510}
+--- !u!114 &1438465366 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5863960678458461661, guid: 93e7d0154b60bb346b541031b0ab20d8, type: 3}
+  m_PrefabInstance: {fileID: 1758035089}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438465355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67588d876b2604545928029fd2f1afe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1473004837
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3970,7 +4138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5863960678458461661, guid: 93e7d0154b60bb346b541031b0ab20d8, type: 3}
       propertyPath: magnitude
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7921746479797252418, guid: 93e7d0154b60bb346b541031b0ab20d8, type: 3}
       propertyPath: m_Sprite
@@ -4510,7 +4678,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 500.9, y: 502.3}
+  m_AnchoredPosition: {x: 491, y: 278}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1889333575
@@ -4649,7 +4817,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 396, y: 501}
+  m_AnchoredPosition: {x: 393, y: 278}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1938469086
@@ -4876,10 +5044,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ebd397b7a1701c41b2763c3dcf46059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnergySprites:
+  - {fileID: 21300000, guid: 8257cbcd2fc138e4194421c74e5ad6b6, type: 3}
+  - {fileID: 21300000, guid: 6f080168a30fb3c4d843eb5779e441a6, type: 3}
+  - {fileID: 21300000, guid: f9fb9cce9fd652443973b3a117a79792, type: 3}
+  - {fileID: 21300000, guid: aac6ddec7f8ddcc45a9ef66f4be3f47c, type: 3}
+  - {fileID: 21300000, guid: a0cd20c3d6ec45247bb4196e3ae3eb95, type: 3}
+  - {fileID: 21300000, guid: 84a366273b5f9544cb733e71c60e9134, type: 3}
+  - {fileID: 21300000, guid: ccdf811b0bc9e77488678ed42fcfb32f, type: 3}
+  - {fileID: 21300000, guid: 1dba9442cf37572448d791a3c63c9c22, type: 3}
+  - {fileID: 21300000, guid: d7f7a11efb3f8bc4da4b89c5c25dfb94, type: 3}
+  - {fileID: 21300000, guid: d29612d19d3d01443a3faf3d8d0389fc, type: 3}
+  - {fileID: 21300000, guid: 612586ca03b527943b48b7136f575e38, type: 3}
   tissueRenderer: {fileID: 393918609}
+  EnergyRenderer: {fileID: 1413875182}
   inputManager: {fileID: 1942375504}
   creatableSound: {fileID: 1126627566}
-  tissueObjects: []
+  tissueObjects:
+  - {fileID: 1252194501}
+  - {fileID: 1438465366}
+  - {fileID: 913711296}
+  - {fileID: 1942375510}
+--- !u!114 &1942375510 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5863960678458461661, guid: f87a103cd01ef3f4a804afa8be735d36, type: 3}
+  m_PrefabInstance: {fileID: 42893464}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942375499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67588d876b2604545928029fd2f1afe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1996761426
 GameObject:
   m_ObjectHideFlags: 0
@@ -5316,3 +5512,4 @@ SceneRoots:
   - {fileID: 1065259888}
   - {fileID: 90637948}
   - {fileID: 2059040968}
+  - {fileID: 1413875183}

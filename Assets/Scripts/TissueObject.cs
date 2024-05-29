@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TissueObject : MonoBehaviour
 {
-    //[SerializeField] FactoryAnimation factory;
+    [SerializeField] FactoryAnimation factory;
     public int magnitude = 5;
     private int MaxQuantity;
     private int CurrentQuantity;

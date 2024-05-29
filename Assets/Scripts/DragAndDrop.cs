@@ -10,7 +10,7 @@ public class DragAndDrop : MonoBehaviour
     public bool hasBeenDropped = false;
     [SerializeField] InputManager input;
     [SerializeField] AudioSource DropSound;
-   // [SerializeField] FactoryAnimation factory;
+    [SerializeField] FactoryAnimation factory;
     private void Awake () {
         input.RegisterToInputEvents(HandleMouseEvent);
     }
@@ -42,7 +42,7 @@ public class DragAndDrop : MonoBehaviour
                 hasBeenDropped = true;
                 DropSound.Play();
                 IsDraggable = false;
-               // factory.HandleTissueDrop(GetComponent<TissueObject>());
+               factory.HandleTissueDrop(GetComponent<TissueObject>());
 
             }
         }

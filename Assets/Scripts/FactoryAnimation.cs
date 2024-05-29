@@ -6,12 +6,13 @@ using UnityEngine.UI;
 
 public class FactoryAnimation : MonoBehaviour
 {
-
-    static int totalEnergy = 5;
-    static float elapsedTime = 0f;
-    const float energyIncrementInterval = 4f; 
+    [SerializeField] Sprite []EnergySprites;
+    static int totalEnergy = 10;
+    static float elapsedTime = 0;
+    const float energyIncrementInterval = 16f; 
     private float timer = 0f;
     [SerializeField] Renderer tissueRenderer;
+    [SerializeField] SpriteRenderer EnergyRenderer;
     [SerializeField] InputManager inputManager;
     private bool isCoroutineActive = false;
     [SerializeField] AudioSource creatableSound;
@@ -31,7 +32,8 @@ public class FactoryAnimation : MonoBehaviour
                 tissue.GetComponent<Collider2D>().enabled = false;
             }
         }
-       // Debug.Log(totalEnergy);
+        
+        Debug.Log(totalEnergy);
     }
     private void Start()
     {
@@ -40,7 +42,7 @@ public class FactoryAnimation : MonoBehaviour
     void StartCreation(MouseInputs NewMouseInputs, Vector3 MousePosition)
     {
         if(NewMouseInputs==MouseInputs.OnMouseUp && !isCoroutineActive)
-           StartObjectCreationCoroutine(3f);
+           StartObjectCreationCoroutine(2f);
     }
 
     private void StartObjectCreationCoroutine(float delaySeconds)
@@ -71,7 +73,7 @@ public class FactoryAnimation : MonoBehaviour
     {
         if (tissueRenderer != null)
         {
-            float darkness = Mathf.Lerp(0f, 1f, 1f - (timer / 3f));
+            float darkness = Mathf.Lerp(0f, 1f, 1f - (timer / 2f));
             tissueRenderer.material.color = new Color(darkness, darkness, darkness);
         }
     }
@@ -86,12 +88,15 @@ public class FactoryAnimation : MonoBehaviour
         while (true)
         {
             elapsedTime += Time.deltaTime;
-            if (elapsedTime >= energyIncrementInterval && totalEnergy<5)
+            if (elapsedTime >= energyIncrementInterval && totalEnergy<10)
             {
                 elapsedTime -= energyIncrementInterval;
                 totalEnergy++;
-                EnableGermsUpToMagnitude(elapsedTime);
                 timer++;
+                EnableFactoriesUpToMagnitude(elapsedTime);
+                if (totalEnergy >= 0 && totalEnergy < 11)
+                { EnergyRenderer.sprite = EnergySprites[totalEnergy]; }
+
             }
             yield return null;
         }
@@ -101,7 +106,7 @@ public class FactoryAnimation : MonoBehaviour
         totalEnergy -= magnitude;
     }
 
-    private void EnableGermsUpToMagnitude(float second)
+    private void EnableFactoriesUpToMagnitude(float second)
     {
         foreach (TissueObject tissue in tissueObjects)
         {
