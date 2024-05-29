@@ -186,7 +186,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 9.133376
+  orthographic size: 25.172737
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -218,7 +218,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 85.28, y: 83.45}
+  m_AnchoredPosition: {x: 85.4, y: 67.7}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &40358462
@@ -407,7 +407,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -419.7, y: -438.5}
+  m_AnchoredPosition: {x: -358.4, y: -175.4}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &117874769
@@ -1703,8 +1703,8 @@ Transform:
   m_GameObject: {fileID: 810362268}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 85.52, y: 77.875, z: 0}
-  m_LocalScale: {x: 3.712796, y: 4.8725076, z: 0}
+  m_LocalPosition: {x: 85.4, y: 76.989, z: 0}
+  m_LocalScale: {x: 3.712796, y: 4.411751, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1962,7 +1962,11 @@ MonoBehaviour:
   EnergyRenderer: {fileID: 120570111}
   inputManager: {fileID: 913711290}
   creatableSound: {fileID: 496451774}
-  tissueObjects: []
+  tissueObjects:
+  - {fileID: 2047552920}
+  - {fileID: 1758035090}
+  - {fileID: 923981821}
+  - {fileID: 42893465}
 --- !u!1001 &923981820
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2451,7 +2455,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -459.29993, y: -532}
+  m_AnchoredPosition: {x: -397.9999, y: -268.90002}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: -1.0727707}
 --- !u!114 &1064022179
@@ -2905,7 +2909,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -460.5, y: -523.5}
+  m_AnchoredPosition: {x: -399.19998, y: -260.40002}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1150121414
@@ -4319,7 +4323,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 391, y: 278}
+  m_AnchoredPosition: {x: 391, y: 395}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &1721675627
@@ -4877,7 +4881,11 @@ MonoBehaviour:
   EnergyRenderer: {fileID: 120570111}
   inputManager: {fileID: 1942375504}
   creatableSound: {fileID: 496451774}
-  tissueObjects: []
+  tissueObjects:
+  - {fileID: 2047552920}
+  - {fileID: 1758035090}
+  - {fileID: 923981821}
+  - {fileID: 42893465}
 --- !u!1 &1944108713
 GameObject:
   m_ObjectHideFlags: 0
@@ -4955,7 +4963,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 491, y: 278}
+  m_AnchoredPosition: {x: 491, y: 395}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2010988478

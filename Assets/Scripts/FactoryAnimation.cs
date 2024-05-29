@@ -32,8 +32,9 @@ public class FactoryAnimation : MonoBehaviour
                 tissue.GetComponent<Collider2D>().enabled = false;
             }
         }
-        
-        Debug.Log(totalEnergy);
+        if (totalEnergy >= 0 && totalEnergy < 11)
+        { EnergyRenderer.sprite = EnergySprites[totalEnergy]; }
+       // Debug.Log(totalEnergy);
     }
     private void Start()
     {
@@ -93,9 +94,9 @@ public class FactoryAnimation : MonoBehaviour
                 elapsedTime -= energyIncrementInterval;
                 totalEnergy++;
                 timer++;
+              
                 EnableFactoriesUpToMagnitude(elapsedTime);
-                if (totalEnergy >= 0 && totalEnergy < 11)
-                { EnergyRenderer.sprite = EnergySprites[totalEnergy]; }
+                
 
             }
             yield return null;
