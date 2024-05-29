@@ -9,7 +9,7 @@ public class FactoryAnimation : MonoBehaviour
     [SerializeField] Sprite []EnergySprites;
     static int totalEnergy = 10;
     static float elapsedTime = 0;
-    const float energyIncrementInterval = 16f; 
+    const float energyIncrementInterval = 12f; 
     private float timer = 0f;
     [SerializeField] Renderer tissueRenderer;
     [SerializeField] SpriteRenderer EnergyRenderer;
